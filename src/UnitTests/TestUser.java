@@ -64,5 +64,15 @@ public class TestUser {
 		u1.setUsername("robshrives@hotmail.com");
 		assertNotEquals("robshrives@gmail.com", u1.getUsername());
 	}
+	
+	@Test
+	public void testGetPasswordPass() {
+		assertEquals("OldPass", u1.getPassword());
+	}
+	
+	@Test
+	public void testGetPasswordFail() {
+		assertNotEquals("NewPass", u1.getPassword());
+	}
 
 }
