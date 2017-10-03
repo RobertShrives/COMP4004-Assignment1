@@ -42,5 +42,15 @@ public class TestFee {
 		f1.setUserid(1);
 		assertNotEquals(0, f1.getUserid());
 	}
+	
+	@Test
+	public void testGetFeePass() {
+		assertEquals(30, f1.getFee());
+	}
+	
+	@Test
+	public void testGetFeeFail() {
+		assertNotEquals(0, f1.getFee());
+	}
 
 }

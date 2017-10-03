@@ -16,4 +16,8 @@ public class Fee {
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
+	
+	public int getFee() {
+		return fee;
+	}
 }
