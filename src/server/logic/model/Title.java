@@ -8,4 +8,8 @@ public class Title {
 		this.ISBN=ISBN;
 		this.booktitle=booktitle;
 	}
+	
+	public String getISBN() {
+		return ISBN;
+	}
 }
