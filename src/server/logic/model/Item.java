@@ -22,4 +22,8 @@ public class Item {
 	public String getISBN() {
 		return ISBN;
 	}
+	
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
 }

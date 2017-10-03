@@ -52,5 +52,17 @@ public class TestItem {
 	public void testgetISBNFail() {
 		assertNotEquals("3333333333333", item1.getItemid());
 	}
+	
+	@Test
+	public void testSetISBNPass() {
+		item1.setISBN("3333333333333");
+		assertEquals("3333333333333", item1.getISBN());
+	}
+	
+	@Test
+	public void testSetISBNFail() {
+		item1.setISBN("2222222222222");
+		assertNotEquals("3333333333333", item1.getItemid());
+	}
 
 }
