@@ -12,4 +12,8 @@ public class Title {
 	public String getISBN() {
 		return ISBN;
 	}
+	
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
 }

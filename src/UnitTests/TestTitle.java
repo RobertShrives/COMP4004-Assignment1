@@ -29,4 +29,16 @@ public class TestTitle {
 	public void testGetISBNFail() {
 		assertNotEquals("2222222222222", t1.getISBN());
 	}
+	
+	@Test
+	public void testSetISBNPass() {
+		t1.setISBN("2222222222222");
+		assertEquals("2222222222222", t1.getISBN());
+	}
+	
+	@Test
+	public void testSetISBNFail() {
+		t1.setISBN("1111111111111");
+		assertNotEquals("2222222222222", t1.getISBN());
+	}
 }
