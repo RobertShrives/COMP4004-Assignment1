@@ -30,5 +30,17 @@ public class TestItem {
 	public void testGetItemidFail() {
 		assertNotEquals(30, item1.getItemid());
 	}
+	
+	@Test
+	public void testSetItemidPass() {
+		item1.setItemid(30);
+		assertEquals(30, item1.getItemid());
+	}
+	
+	@Test
+	public void testSetItemidFail() {
+		item1.setItemid(10);
+		assertNotEquals(30, item1.getItemid());
+	}
 
 }

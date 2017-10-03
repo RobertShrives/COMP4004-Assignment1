@@ -14,4 +14,8 @@ public class Item {
 	public int getItemid() {
 		return itemid;
 	}
+	
+	public void setItemid(int itemid) {
+		this.itemid = itemid;
+	}
 }
