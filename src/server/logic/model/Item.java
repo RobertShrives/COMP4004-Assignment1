@@ -18,4 +18,8 @@ public class Item {
 	public void setItemid(int itemid) {
 		this.itemid = itemid;
 	}
+	
+	public String getISBN() {
+		return ISBN;
+	}
 }
