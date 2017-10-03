@@ -30,5 +30,17 @@ public class TestUser {
 	public void testGetUserIdFail() {
 		assertNotEquals(1, u1.getUserid());
 	}
+	
+	@Test
+	public void testSetUserIdPass() {
+		u1.setUserid(5);
+		assertEquals(5, u1.getUserid());
+	}
+	
+	@Test
+	public void testSetUserIdFail() {
+		u1.setUserid(5);
+		assertNotEquals(10, u1.getUserid());
+	}
 
 }
