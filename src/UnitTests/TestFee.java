@@ -20,5 +20,15 @@ public class TestFee {
 	public void testFeeConstructorFail() {
 		assertNull(f2);
 	}
+	
+	@Test
+	public void testGetUseridPass() {
+		assertEquals(0, f1.getUserid());
+	}
+	
+	@Test
+	public void testGetUseridFail() {
+		assertNotEquals(1, f1.getUserid());
+	}
 
 }
