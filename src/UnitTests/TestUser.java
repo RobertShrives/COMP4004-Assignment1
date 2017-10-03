@@ -74,5 +74,17 @@ public class TestUser {
 	public void testGetPasswordFail() {
 		assertNotEquals("NewPass", u1.getPassword());
 	}
+	
+	@Test
+	public void testSetPasswordPass() {
+		u1.setPassword("newPAss");
+		assertEquals("newPAss", u1.getPassword());
+	}
+	
+	@Test
+	public void testSetPasswordFail() {
+		u1.setPassword("newPAss");
+		assertNotEquals("OldPass", u1.getPassword());
+	}
 
 }
