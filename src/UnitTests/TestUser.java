@@ -20,5 +20,15 @@ public class TestUser {
 	public void testUserConstructorFail() {
 		assertNull(u2);
 	}
+	
+	@Test
+	public void testGetUserIdPass() {
+		assertEquals(0, u1.getUserid());
+	}
+	
+	@Test
+	public void testGetUserIdFail() {
+		assertNotEquals(1, u1.getUserid());
+	}
 
 }
