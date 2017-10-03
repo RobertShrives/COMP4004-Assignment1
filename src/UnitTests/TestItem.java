@@ -74,5 +74,17 @@ public class TestItem {
 	public void testGetCopynumberFail() {
 		assertNotEquals("2", item1.getCopynumber());
 	}
+	
+	@Test
+	public void testSetCopynumberPass() {
+		item1.setCopynumber("5");
+		assertEquals("5", item1.getCopynumber());
+	}
+	
+	@Test
+	public void testSetCopynumberFail() {
+		item1.setCopynumber("3");
+		assertNotEquals("5", item1.getCopynumber());
+	}
 
 }
