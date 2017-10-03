@@ -24,4 +24,8 @@ public class Title {
 	public void setBooktitle(String booktitle) {
 		this.booktitle = booktitle;
 	}
+	
+	public String toString(){
+		return "["+this.ISBN+","+this.booktitle+"]";
+	}
 }

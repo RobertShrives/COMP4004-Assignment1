@@ -63,4 +63,14 @@ public class TestTitle {
 		t1.setBooktitle("New title");
 		assertNotEquals("Test Book", t1.getBooktitle());
 	}
+	
+	@Test
+	public void testToStringPass() {
+		assertEquals("["+ t1.getISBN() +","+ t1.getBooktitle() +"]", t1.toString());
+	}
+	
+	@Test
+	public void testToStringFail () {
+		assertNotEquals("Fail", t1.toString());
+	}
 }
