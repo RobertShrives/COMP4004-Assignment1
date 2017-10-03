@@ -42,5 +42,15 @@ public class TestUser {
 		u1.setUserid(5);
 		assertNotEquals(10, u1.getUserid());
 	}
+	
+	@Test
+	public void testGetUsernamePass() {
+		assertEquals("robshrives@gmail.com", u1.getUsername());
+	}
+	
+	@Test
+	public void testGetUsernameFail() {
+		assertNotEquals("r_hrives@gmail.com", u1.getUsername());
+	}
 
 }
