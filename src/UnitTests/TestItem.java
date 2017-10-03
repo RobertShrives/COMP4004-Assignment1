@@ -86,5 +86,16 @@ public class TestItem {
 		item1.setCopynumber("3");
 		assertNotEquals("5", item1.getCopynumber());
 	}
+	
+	@Test
+	public void testToStringPass() {
+		assertEquals("["+ item1.getItemid() +","+ item1.getISBN() +","+ item1.getCopynumber() +"]", item1.toString());
+	}
+	
+	
+	@Test
+	public void testToStringFail () {
+		assertNotEquals("Fail", item1.toString());
+	}
 
 }
