@@ -20,5 +20,15 @@ public class TestItem {
 	public void testItemCosntructorFail() {
 		assertNull(item2);
 	}
+	
+	@Test
+	public void testGetItemidPass() {
+		assertEquals(0, item1.getItemid());
+	}
+	
+	@Test
+	public void testGetItemidFail() {
+		assertNotEquals(30, item1.getItemid());
+	}
 
 }
