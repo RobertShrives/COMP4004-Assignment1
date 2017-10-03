@@ -20,4 +20,8 @@ public class Title {
 	public String getBooktitle() {
 		return booktitle;
 	}
+	
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
+	}
 }

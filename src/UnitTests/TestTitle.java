@@ -51,4 +51,16 @@ public class TestTitle {
 	public void testGetBooktitleFail() {
 		assertNotEquals("Fail Book", t1.getBooktitle());
 	}
+	
+	@Test
+	public void testSetBooktitlePass() {
+		t1.setBooktitle("New title");
+		assertEquals("New title", t1.getBooktitle());
+	}
+	
+	@Test
+	public void testSetBooktitleFail() {
+		t1.setBooktitle("New title");
+		assertNotEquals("Test Book", t1.getBooktitle());
+	}
 }
