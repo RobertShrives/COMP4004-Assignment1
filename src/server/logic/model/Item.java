@@ -26,4 +26,8 @@ public class Item {
 	public void setISBN(String iSBN) {
 		ISBN = iSBN;
 	}
+	
+	public String getCopynumber() {
+		return copynumber;
+	}
 }

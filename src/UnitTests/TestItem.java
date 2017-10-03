@@ -64,5 +64,15 @@ public class TestItem {
 		item1.setISBN("2222222222222");
 		assertNotEquals("3333333333333", item1.getItemid());
 	}
+	
+	@Test
+	public void testGetCopynumberPass() {
+		assertEquals("1", item1.getCopynumber());
+	}
+	
+	@Test
+	public void testGetCopynumberFail() {
+		assertNotEquals("2", item1.getCopynumber());
+	}
 
 }
