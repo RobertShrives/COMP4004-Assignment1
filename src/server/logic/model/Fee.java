@@ -24,4 +24,8 @@ public class Fee {
 	public void setFee(int fee) {
 		this.fee = fee;
 	}
+	
+	public String toString(){
+		return "["+this.userid+","+this.fee+"]";
+	}
 }
