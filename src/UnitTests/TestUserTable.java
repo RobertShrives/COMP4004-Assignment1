@@ -31,5 +31,21 @@ public class TestUserTable {
 	public void testLookupFail() {
 		assertEquals(false, userTable1.lookup(0));
 	}
+	
+	@Test
+	public void testGetUserTablePass() {
+		userTable1.createuser("test1@gmail.com", "Pass");
+		userTable1.createuser("test2@hotmail.com", "Pass");
+		assertEquals(2, userTable1.getUserTable().size());
+	}
+	
+	@Test
+	public void testGetUserTableFail() {
+		userTable1.createuser("test1@gmail.com", "Pass");
+		userTable1.createuser("test2@hotmail.com", "Pass");
+		assertNotEquals(1, userTable1.getUserTable().size());
+	}
+	
+	
 
 }
