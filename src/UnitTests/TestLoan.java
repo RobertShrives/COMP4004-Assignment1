@@ -2,20 +2,32 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
+import java.io.Console;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
 
+import com.sun.jmx.snmp.Timestamp;
+
 import server.logic.model.Loan;
 
 public class TestLoan {
-
-	Date date1 = new Date();
+	
+	
+	DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	Timestamp stamp = new Timestamp(System.currentTimeMillis());
+	Date date = new Date(stamp.getDateTime());
+	Date date1 = new Date(System.currentTimeMillis()+5*60*1000);
 	Date date2;
 	Loan loan1 = new Loan(0,"1111111111111", "1", date1, "0");
 	Loan loan2;
-	
 
+	
+	Console console = System.console();
+	
+	
 	@Test
 	public void testLoanConstructorPass() {
 		assertNotNull(loan1);
@@ -103,6 +115,18 @@ public class TestLoan {
 	}
 	
 	@Test
+	public void testSetDatePass() {
+		loan1.setDate(date1);
+		assertEquals(date1, loan1.getDate());
+	}
+	
+	@Test
+	public void testSetDateFail() {
+		loan1.setDate(date);
+		assertNotEquals(date1, loan1.getDate());
+	}
+	
+	@Test
 	public void testGetRenewstatePass() {
 		assertEquals("0", loan1.getRenewstate());
 	}
@@ -123,6 +147,5 @@ public class TestLoan {
 		loan1.setRenewstate("0");
 		assertNotEquals("1", loan1.getRenewstate());
 	}
-
 	
 }

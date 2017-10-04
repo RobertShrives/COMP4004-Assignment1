@@ -49,6 +49,10 @@ public class Loan {
 		return date;
 	}
 	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 	public String getRenewstate() {
 		return renewstate;
 	}
@@ -57,6 +61,4 @@ public class Loan {
 		this.renewstate = renewstate;
 	}
 	
-	
-
 }
