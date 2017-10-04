@@ -2,7 +2,6 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
-import java.io.Console;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,10 +23,6 @@ public class TestLoan {
 	Loan loan1 = new Loan(0,"1111111111111", "1", date1, "0");
 	Loan loan2;
 
-	
-	Console console = System.console();
-	
-	
 	@Test
 	public void testLoanConstructorPass() {
 		assertNotNull(loan1);
@@ -148,4 +143,13 @@ public class TestLoan {
 		assertNotEquals("1", loan1.getRenewstate());
 	}
 	
+	@Test
+	public void testToStringPass() {
+		assertEquals("["+loan1.getUserid()+","+loan1.getIsbn()+","+loan1.getCopynumber() +","+format1.format(loan1.getDate())+","+loan1.getRenewstate()+"]", loan1.toString());
+	}
+	
+	@Test
+	public void testToStringFail() {
+		assertNotEquals("Fail", loan1.toString());
+	}
 }

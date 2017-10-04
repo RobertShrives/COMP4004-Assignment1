@@ -61,4 +61,8 @@ public class Loan {
 		this.renewstate = renewstate;
 	}
 	
+	public String toString(){
+		return "["+this.userid+","+this.isbn+","+this.copynumber+","+format1.format(this.date)+","+this.renewstate+"]";
+	}
+	
 }
