@@ -78,5 +78,17 @@ public class TestLoan {
 	public void testGetCopynumberFail() {
 		assertNotEquals("2", loan1.getCopynumber());
 	}
+	
+	@Test
+	public void testSetCopynumberPass() {
+		loan1.setCopynumber("5");
+		assertEquals("5", loan1.getCopynumber());
+	}
+	
+	@Test
+	public void testSetCopynumberFail() {
+		loan1.setCopynumber("3");
+		assertNotEquals("5", loan1.getCopynumber());
+	}
 
 }
