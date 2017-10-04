@@ -8,28 +8,37 @@ import server.logic.tables.TitleTable;
 
 public class TestTitleTable {
 
-	TitleTable titleTable1 = new TitleTable();
 	
 	@Test
 	public void testCreateTitlePass() {
-		assertEquals(true, titleTable1.createtitle("1111111111111", "Test Book"));
+		assertEquals(true, TitleTable.getInstance().createtitle("1111111111111", "Test Book1"));
 	}
 	
 	@Test
 	public void testCreateTitleFail() {
-		titleTable1.createtitle("1111111111111", "Test Book");
-		assertEquals(false, titleTable1.createtitle("1111111111111", "Test Book"));
+		TitleTable.getInstance().createtitle("2222222222222", "Test Book2");
+		assertEquals(false, TitleTable.getInstance().createtitle("2222222222222", "Test Book3"));
 	}
 	
 	@Test
 	public void testLookupStringPass() {
-		titleTable1.createtitle("1111111111111", "Test Book");
-		assertEquals(true, titleTable1.lookup("1111111111111"));
+		assertEquals(true, TitleTable.getInstance().lookup("9781442668584"));
 	}
 	
 	@Test
 	public void testLookupStringFail() {
-		assertEquals(false, titleTable1.lookup("1111111111111"));
+		assertEquals(false, TitleTable.getInstance().lookup("3333333333333"));
+	}
+	
+	@Test
+	public void testGetTitleTablePass() {
+		TitleTable.getInstance().createtitle("4444444444444", "Test Book 4");
+		assertEquals(8, TitleTable.getInstance().getTitleTable().size());
+	}
+	
+	@Test
+	public void testGetTitleTablefail() {
+		assertNotEquals(9, TitleTable.getInstance().getTitleTable().size());
 	}
 
 }

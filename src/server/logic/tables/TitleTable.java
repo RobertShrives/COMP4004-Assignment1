@@ -15,10 +15,22 @@ public class TitleTable {
     private static class TitleListHolder {
         private static final TitleTable INSTANCE = new TitleTable();
     }
+    
+    private TitleTable(){
+    	//set up the default list with some instances
+    	String[] ISBNList=new String[]{"9781442668584","9781442616899","9781442667181","9781611687910","9781317594277"};
+    	String[] titlenameList=new String[]{"Harry Potter","Percy Jackson","Silence of the Lambs","Lord of the Rings","Atlas Shrugged"};
+    	for(int i=0;i<ISBNList.length;i++){
+    		Title detitle=new Title(ISBNList[i],titlenameList[i]);
+    		titleList.add(detitle);
+		}
     	
+    };	
+    
     public static final TitleTable getInstance() {
         return TitleListHolder.INSTANCE;
     }
+    
 	public Object createtitle(String string, String string2) {		
 		boolean result=true;
 		int flag=0;
@@ -56,6 +68,10 @@ public class TitleTable {
 			result=false;
 		}
 		return result;
+	}
+	
+	public List<Title> getTitleTable() {
+		return titleList;
 	}
 	
 }
