@@ -46,5 +46,15 @@ public class TestLoan {
 		loan1.setUserid(3);
 		assertNotEquals(1, loan1.getUserid());
 	}
+	
+	@Test
+	public void testGetISBNPass() {
+		assertEquals("1111111111111", loan1.getIsbn());
+	}
+	
+	@Test
+	public void testGetISBNFail() {
+		assertNotEquals("2222222222222", loan1.getIsbn());
+	}
 
 }
