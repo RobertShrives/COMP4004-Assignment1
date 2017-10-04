@@ -48,5 +48,8 @@ public class Loan {
 	public Date getDate() {
 		return date;
 	}
-
+	
+	public String getRenewstate() {
+		return renewstate;
+	}
 }

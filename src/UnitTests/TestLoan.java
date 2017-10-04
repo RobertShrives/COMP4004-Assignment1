@@ -11,6 +11,7 @@ import server.logic.model.Loan;
 public class TestLoan {
 
 	Date date1 = new Date();
+	Date date2;
 	Loan loan1 = new Loan(0,"1111111111111", "1", date1, "0");
 	Loan loan2;
 	
@@ -90,5 +91,25 @@ public class TestLoan {
 		loan1.setCopynumber("3");
 		assertNotEquals("5", loan1.getCopynumber());
 	}
-
+	
+	@Test
+	public void testGetDatePass() {
+		assertNotNull(loan1.getDate());
+	}
+	
+	@Test
+	public void testGetDateFail() {
+		assertNull(date2);
+	}
+	
+	@Test
+	public void testGetRenewstatePass() {
+		assertEquals("0", loan1.getRenewstate());
+	}
+	
+	@Test
+	public void testGetRenewstateFail() {
+		assertNotEquals("1", loan1.getRenewstate());
+	}
+	
 }
