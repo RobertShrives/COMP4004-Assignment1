@@ -36,5 +36,9 @@ public class Loan {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+	
+	public String getCopynumber() {
+		return copynumber;
+	}
 
 }

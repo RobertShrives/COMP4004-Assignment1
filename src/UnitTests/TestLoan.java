@@ -68,5 +68,15 @@ public class TestLoan {
 		loan1.setIsbn("1111111111111");
 		assertNotEquals("2222222222222", loan1.getIsbn());
 	}
+	
+	@Test
+	public void testGetCopynumberPass() {
+		assertEquals("1", loan1.getCopynumber());
+	}
+	
+	@Test
+	public void testGetCopynumberFail() {
+		assertNotEquals("2", loan1.getCopynumber());
+	}
 
 }
