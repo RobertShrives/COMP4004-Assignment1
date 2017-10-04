@@ -1,5 +1,7 @@
 package server.logic.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Loan {
@@ -15,6 +17,12 @@ public class Loan {
 		this.copynumber=copynumber;
 		this.date=date;
 		this.renewstate=renewstate;
+	}
+	
+	DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	
+	public int getUserid() {
+		return userid;
 	}
 
 }

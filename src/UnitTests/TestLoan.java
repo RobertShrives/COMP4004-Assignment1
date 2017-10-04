@@ -24,5 +24,15 @@ public class TestLoan {
 	public void testLoanConstructorFail() {
 		assertNull(loan2);
 	}
+	
+	@Test
+	public void testGetUserIdPass() {
+		assertEquals(0, loan1.getUserid());
+	}
+	
+	@Test
+	public void testGetUserIdFail() {
+		assertNotEquals(1, loan1.getUserid());
+	}
 
 }
