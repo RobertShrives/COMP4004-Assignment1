@@ -112,4 +112,17 @@ public class TestLoan {
 		assertNotEquals("1", loan1.getRenewstate());
 	}
 	
+	@Test
+	public void testSetRenewstatePass() {
+		loan1.setRenewstate("1");
+		assertEquals("1", loan1.getRenewstate());
+	}
+	
+	@Test
+	public void testSetRenewstateFail() {
+		loan1.setRenewstate("0");
+		assertNotEquals("1", loan1.getRenewstate());
+	}
+
+	
 }
