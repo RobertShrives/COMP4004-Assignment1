@@ -44,5 +44,9 @@ public class Loan {
 	public void setCopynumber(String copynumber) {
 		this.copynumber = copynumber;
 	}
+	
+	public Date getDate() {
+		return date;
+	}
 
 }
