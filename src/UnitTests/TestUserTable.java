@@ -8,17 +8,28 @@ import server.logic.tables.UserTable;
 
 public class TestUserTable {
 	
-	UserTable ut1 = new UserTable();
+	UserTable userTable1 = new UserTable();
 	
 	@Test
 	public void testCreateUserPass() {
-		assertEquals(true, ut1.createuser("robshrives@gmail.com", "Pass"));
+		assertEquals(true, userTable1.createuser("robshrives@gmail.com", "Pass"));
 	}
 	
 	@Test
 	public void testCreateUserFail() {
-		ut1.createuser("robshrives@gmail.com", "Pass");
-		assertEquals(false, ut1.createuser("robshrives@gmail.com", "Pass"));
+		userTable1.createuser("robshrives@gmail.com", "Pass");
+		assertEquals(false, userTable1.createuser("robshrives@gmail.com", "Pass"));
+	}
+	
+	@Test
+	public void testLookupPass() {
+		userTable1.createuser("robshrives@gmail.com", "Pass");
+		assertEquals(true, userTable1.lookup(0));
+	}
+	
+	@Test
+	public void testLookupFail() {
+		assertEquals(false, userTable1.lookup(0));
 	}
 
 }
