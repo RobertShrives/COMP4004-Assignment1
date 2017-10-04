@@ -8,44 +8,38 @@ import server.logic.tables.UserTable;
 
 public class TestUserTable {
 	
-	UserTable userTable1 = new UserTable();
+
 	
 	@Test
 	public void testCreateUserPass() {
-		assertEquals(true, userTable1.createuser("robshrives@gmail.com", "Pass"));
+		assertEquals(true, UserTable.getInstance().createuser("newEmail@gmail.com", "Pass"));
 	}
 	
 	@Test
 	public void testCreateUserFail() {
-		userTable1.createuser("robshrives@gmail.com", "Pass");
-		assertEquals(false, userTable1.createuser("robshrives@gmail.com", "Pass"));
+		UserTable.getInstance().createuser("robshrives@gmail.com", "Pass");
+		assertEquals(false,UserTable.getInstance().createuser("robshrives@gmail.com", "Pass"));
 	}
 	
 	@Test
-	public void testLookupPass() {
-		userTable1.createuser("robshrives@gmail.com", "Pass");
-		assertEquals(true, userTable1.lookup(0));
+	public void testLookupIntPass() {
+		assertEquals(true,UserTable.getInstance().lookup(2));
 	}
 	
 	@Test
-	public void testLookupFail() {
-		assertEquals(false, userTable1.lookup(0));
+	public void testLookupIntFail() {
+		assertEquals(false, UserTable.getInstance().lookup(7));
 	}
 	
 	@Test
 	public void testGetUserTablePass() {
-		userTable1.createuser("test1@gmail.com", "Pass");
-		userTable1.createuser("test2@hotmail.com", "Pass");
-		assertEquals(2, userTable1.getUserTable().size());
+		UserTable.getInstance().createuser("test2@hotmail.com", "Pass");
+		assertEquals(8, UserTable.getInstance().getUserTable().size());
 	}
 	
 	@Test
 	public void testGetUserTableFail() {
-		userTable1.createuser("test1@gmail.com", "Pass");
-		userTable1.createuser("test2@hotmail.com", "Pass");
-		assertNotEquals(1, userTable1.getUserTable().size());
+		assertNotEquals(9, UserTable.getInstance().getUserTable().size());
 	}
 	
-	
-
 }

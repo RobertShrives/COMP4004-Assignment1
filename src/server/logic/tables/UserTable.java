@@ -11,7 +11,16 @@ public class UserTable {
     private static class UserListHolder {
         private static final UserTable INSTANCE = new UserTable();
     }
-    
+    private UserTable(){
+    	//set up the default list with some instances
+    	String[] passwordList=new String[]{"Rob","Jenny","Alice","John","Gail"};
+    	String[] usernameList=new String[]{"Rob@carleton.ca","Jenny@carleton.ca","Alice@carleton.ca","John@carleton.ca","Gail@carleton.ca"};
+    	for(int i=0;i<usernameList.length;i++){
+			User deuser=new User(i,usernameList[i],passwordList[i]);
+			userList.add(deuser);
+		}
+    	
+    };
     public static final UserTable getInstance() {
         return UserListHolder.INSTANCE;
     }
@@ -56,4 +65,5 @@ public class UserTable {
 	public List<User> getUserTable() {
 		return userList;
 	}
+	
 }
