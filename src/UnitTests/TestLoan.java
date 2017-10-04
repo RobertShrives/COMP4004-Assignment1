@@ -34,5 +34,17 @@ public class TestLoan {
 	public void testGetUserIdFail() {
 		assertNotEquals(1, loan1.getUserid());
 	}
+	
+	@Test
+	public void testSetUseridPass() {
+		loan1.setUserid(3);
+		assertEquals(3, loan1.getUserid());
+	}
+	
+	@Test
+	public void testSetUseridFail() {
+		loan1.setUserid(3);
+		assertNotEquals(1, loan1.getUserid());
+	}
 
 }
