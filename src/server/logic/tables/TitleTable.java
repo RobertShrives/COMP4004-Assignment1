@@ -74,4 +74,6 @@ public class TitleTable {
 		return titleList;
 	}
 	
+	//delete function
+	
 }

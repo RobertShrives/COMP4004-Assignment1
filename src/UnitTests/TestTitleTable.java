@@ -40,5 +40,7 @@ public class TestTitleTable {
 	public void testGetTitleTablefail() {
 		assertNotEquals(9, TitleTable.getInstance().getTitleTable().size());
 	}
+	
+	//delete function
 
 }
