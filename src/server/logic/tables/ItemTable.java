@@ -49,4 +49,30 @@ public class ItemTable {
 		}
 		return result;
 	}
+	
+	public boolean lookup(String string, String string2) {
+		boolean result=true;
+		int flag=0;
+		for(int i=0;i<itemList.size();i++){
+			String ISBN=(itemList.get(i)).getISBN();
+			String copynumber=(itemList.get(i)).getCopynumber();
+			if(ISBN.equalsIgnoreCase(string) && copynumber.equalsIgnoreCase(string2)){
+				flag=flag+1;
+			}else{
+				flag=flag+0;	
+			}
+		}
+		if(flag==0){
+			result=false;
+		}
+		return result;
+	}
+	
+	public List<Item> getItemTable() {
+		return itemList;
+	}
+	
+	//Delete
+	
+	//Delete all
 }
