@@ -106,5 +106,25 @@ public class TestLoanTable {
 		assertNotEquals("success", (LoanTable.getInstance().createloan(0, "9781442111111", "1", date)));
 		
 	}
+	
+	@Test
+	public void testLookupPass(){
+		TitleTable.getInstance().createtitle("9781442111333","test");
+		ItemTable.getInstance().createitem("9781442111333");
+		LoanTable.getInstance().createloan(1, "9781442111333", "1", date);
+		LoanTable.getInstance().getLoanTable();
+		assertEquals(false, LoanTable.getInstance().lookup(4, "9781443", "1"));
+		
+	}
+	
+	@Test
+	public void testLookupFail(){
+		TitleTable.getInstance().createtitle("9781442111333","test");
+		ItemTable.getInstance().createitem("9781442111333");
+		LoanTable.getInstance().createloan(1, "9781442111333", "1", date);
+		LoanTable.getInstance().getLoanTable();
+		assertEquals(true, LoanTable.getInstance().lookup(4, "9781442111333", "0"));
+		
+	}
 
 }
