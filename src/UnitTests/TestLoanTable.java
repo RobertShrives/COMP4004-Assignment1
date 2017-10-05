@@ -11,6 +11,7 @@ import com.sun.jmx.snmp.Timestamp;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
 import server.logic.tables.TitleTable;
+import server.logic.tables.UserTable;
 
 /**
  * @author robsh
@@ -154,6 +155,26 @@ public class TestLoanTable {
 		ItemTable.getInstance().createitem("9781442111000");
 		LoanTable.getInstance().createloan(3, "9781442111000", "1", date);
 		assertEquals(true, LoanTable.getInstance(). checkLimit(1));	
+	}
+	
+	@Test
+	public void testGetLoanTablePass(){
+		//create new user
+		UserTable.getInstance().createuser("newerEmail@gmail.com", "Pass");
+		TitleTable.getInstance().createtitle("9781442112000","test");
+		ItemTable.getInstance().createitem("9781442112000");
+		LoanTable.getInstance().createloan(5, "9781442112000", "1", date);
+		assertEquals(5, LoanTable.getInstance().getLoanTable().size());
+	}
+	
+	@Test
+	public void testGetLoanTableFail(){
+		//create new user
+		UserTable.getInstance().createuser("newerEmail@gmail.com", "Pass");
+		TitleTable.getInstance().createtitle("9781442112000","test");
+		ItemTable.getInstance().createitem("9781442112000");
+		LoanTable.getInstance().createloan(5, "9781442112000", "1", date);
+		assertNotEquals(3, LoanTable.getInstance().getLoanTable().size());
 	}
 
 }
