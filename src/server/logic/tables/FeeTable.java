@@ -20,9 +20,11 @@ public class FeeTable {
     	feeList.add(fee);
     	Initialization();
     };
+    
     public static final FeeTable getInstance() {
         return FeeListHolder.INSTANCE;
     }
+    
 	public boolean lookup(int j) {
 		boolean result=true;
 		int fee = 0;
@@ -102,5 +104,7 @@ public class FeeTable {
 		return result;
 	}
 	
-	
+	public List<Fee> getFeeTable() {
+		return feeList;
+	}
 }
