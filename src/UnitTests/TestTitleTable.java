@@ -2,6 +2,8 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
+
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import server.logic.tables.TitleTable;
@@ -41,6 +43,11 @@ public class TestTitleTable {
 		assertNotEquals(9, TitleTable.getInstance().getTitleTable().size());
 	}
 	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+	
 	//delete function
+	
 
 }

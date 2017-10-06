@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.Date;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import com.sun.jmx.snmp.Timestamp;
@@ -30,6 +31,8 @@ import server.logic.tables.UserTable;
  *
  */
 public class TestLoanTable {
+
+	
 	Timestamp stamp = new Timestamp(System.currentTimeMillis());
 	Date date = new Date(stamp.getDateTime());
 
@@ -175,6 +178,10 @@ public class TestLoanTable {
 		ItemTable.getInstance().createitem("9781442112000");
 		LoanTable.getInstance().createloan(5, "9781442112000", "1", date);
 		assertNotEquals(3, LoanTable.getInstance().getLoanTable().size());
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
 	}
 
 }

@@ -2,12 +2,14 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import server.logic.tables.ItemTable;
 import server.logic.tables.TitleTable;
 
 public class TestItemTable {
+
 
 	@Test
 	public void testCreateItemTablePass() {
@@ -36,14 +38,19 @@ public class TestItemTable {
 	
 	@Test
 	public void testGetItemTablePass() {
-		TitleTable.getInstance().createtitle("9781443","test");
-		ItemTable.getInstance().createitem("9781443");
+		TitleTable.getInstance().createtitle("9781442","test");
+		ItemTable.getInstance().createitem("9781442");
+		System.out.println(ItemTable.getInstance().getItemTable().size());
 		assertEquals(5, ItemTable.getInstance().getItemTable().size());
 	}
 	
 	@Test
 	public void testGetItemTableFail() {
-		assertNotEquals(6, ItemTable.getInstance().getItemTable().size());
+		assertNotEquals(10, ItemTable.getInstance().getItemTable().size());
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
 	}
 	
 	//Delete

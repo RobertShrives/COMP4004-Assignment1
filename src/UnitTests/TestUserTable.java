@@ -2,13 +2,13 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import server.logic.tables.UserTable;
 
 public class TestUserTable {
 	
-
 	
 	@Test
 	public void testCreateUserPass() {
@@ -28,7 +28,7 @@ public class TestUserTable {
 	
 	@Test
 	public void testLookupIntFail() {
-		assertEquals(false, UserTable.getInstance().lookup(7));
+		assertEquals(false, UserTable.getInstance().lookup(20));
 	}
 	
 	@Test
@@ -42,4 +42,7 @@ public class TestUserTable {
 		assertNotEquals(9, UserTable.getInstance().getUserTable().size());
 	}
 	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
 }
