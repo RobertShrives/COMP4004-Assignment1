@@ -180,6 +180,18 @@ public class TestLoanTable {
 		assertNotEquals(3, LoanTable.getInstance().getLoanTable().size());
 	}
 	
+	@Test
+	public void testLookLimitPass(){
+		assertEquals(true, LoanTable.getInstance().looklimit(0));
+		
+	}
+	
+	@Test
+	public void testLookLimitFail(){
+		assertEquals(false, LoanTable.getInstance().looklimit(1));
+		
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
