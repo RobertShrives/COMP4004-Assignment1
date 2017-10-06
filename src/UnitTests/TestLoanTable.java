@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import com.sun.jmx.snmp.Timestamp;
 
+import server.logic.model.Loan;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
 import server.logic.tables.TitleTable;
@@ -222,6 +223,66 @@ public class TestLoanTable {
 	@Test
 	public void testCheckLoanSingleStringFail(){
 		assertEquals(true, LoanTable.getInstance().checkLoan("9781442112000","0"));	
+	}
+	
+	@Test
+	public void testRenewalSuccessPass(){
+		UserTable.getInstance().createuser("loantableEmail@gmail.com", "Pass");
+		TitleTable.getInstance().createtitle("9781342112939","loantitle");
+		ItemTable.getInstance().createitem("9781342112939");
+		List<Loan> loanList=LoanTable.getInstance().getLoanTable();
+		LoanTable.getInstance().createloan(3, "9781342112939", "1", myDate);
+		ItemTable.getInstance().getItemTable();
+		TitleTable.getInstance().getTitleTable();
+		LoanTable.getInstance().renewal(5, "9781342112939", "1", myDate);
+		LoanTable.getInstance().renewal(5, "9781342112939", "1", myDate);
+		assertEquals("success", LoanTable.getInstance().renewal(3, "9781442111000", "1", myDate));	
+		
+	}
+	
+	@Test
+	public void testMaxItemsPass(){
+		assertEquals("The Maximun Number of Items is Reached", LoanTable.getInstance().renewal(1, "9781342112939", "1", myDate));	
+		
+	}
+	
+	@Test
+	public void testMaxItemsFail(){
+		assertNotEquals("Outstanding Fee Exists", LoanTable.getInstance().renewal(1, "9781442111444", "1", myDate));	
+		
+	}
+	
+	@Test
+	public void testRenewExceededPass(){
+		LoanTable.getInstance().renewal(3, "9781442111000", "1", myDate);
+		assertEquals("Renewed Item More Than Once for the Same Loan", LoanTable.getInstance().renewal(3, "9781442111000", "1", myDate));	
+		
+	}
+	
+	@Test
+	public void testRenewExceededFail(){
+		LoanTable.getInstance().renewal(3, "9781442111000", "1", myDate);
+		assertNotEquals("The Maximun Number of Items is Reached", LoanTable.getInstance().renewal(3, "9781442111000", "1", myDate));		
+	}
+	
+	@Test
+	public void testRenewDoesntExistPass(){
+		assertEquals("The loan does not exist", LoanTable.getInstance().renewal(2, "9781442111000", "1", myDate));		
+	}
+	
+	@Test
+	public void testRenewDoesntExistFail(){
+		assertNotEquals("Outstanding Fee Exists", LoanTable.getInstance().renewal(2, "9781442111000", "1", myDate));		
+	}
+	
+	@Test
+	public void testRenewOustandingFeePass(){
+		assertEquals("Outstanding Fee Exists", LoanTable.getInstance().renewal(0, "9781442111000", "1", myDate));		
+	}
+	
+	@Test
+	public void testRenewOustandingFeeFail(){
+		assertNotEquals("The loan does not exist", LoanTable.getInstance().renewal(0, "9781442111000", "1", myDate));		
 	}
 	
 	@AfterClass
