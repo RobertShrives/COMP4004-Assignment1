@@ -5,14 +5,13 @@ import static org.junit.Assert.*;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import org.junit.AfterClass;
 import org.junit.Test;
 
 import com.sun.jmx.snmp.Timestamp;
 
-import server.logic.model.Loan;
+import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
 import server.logic.tables.TitleTable;
@@ -230,7 +229,6 @@ public class TestLoanTable {
 		UserTable.getInstance().createuser("loantableEmail@gmail.com", "Pass");
 		TitleTable.getInstance().createtitle("9781342112939","loantitle");
 		ItemTable.getInstance().createitem("9781342112939");
-		List<Loan> loanList=LoanTable.getInstance().getLoanTable();
 		LoanTable.getInstance().createloan(3, "9781342112939", "1", myDate);
 		ItemTable.getInstance().getItemTable();
 		TitleTable.getInstance().getTitleTable();
@@ -283,6 +281,45 @@ public class TestLoanTable {
 	@Test
 	public void testRenewOustandingFeeFail(){
 		assertNotEquals("The loan does not exist", LoanTable.getInstance().renewal(0, "9781442111000", "1", myDate));		
+	}
+	
+	@Test
+	public void testReturnItemSuccessPass(){
+		UserTable.getInstance().createuser("testPerson@gmail.com", "pword");
+		TitleTable.getInstance().createtitle("9781777112939","loantitle2");
+		ItemTable.getInstance().createitem("9781777112939");
+		LoanTable.getInstance().createloan(6, "9781777112939", "1", new Date());
+		assertEquals("success", LoanTable.getInstance().returnItem(6, "9781777112939", "1", new Date()));		
+	}
+	
+	@Test
+	public void testReturnItemSuccessFail(){
+		assertNotEquals("success", LoanTable.getInstance().returnItem(6, "9781777112939", "1", new Date()));		
+	}
+	
+	@Test
+	public void testReturnLoanDoesntExistPass(){
+		assertEquals("The Loan Does Not Exist", LoanTable.getInstance().returnItem(7, "9781777112939", "1", new Date()));		
+	}
+	
+	@Test
+	public void testReturnLoanDoesntExistfail(){
+		assertNotEquals("Fail text", LoanTable.getInstance().returnItem(7, "9781777112939", "1", new Date()));		
+	}
+	
+	@Test
+	public void testReturnApplyFeePass(){
+		UserTable.getInstance().createuser("Parsons@gmail.com", "pord");
+		TitleTable.getInstance().createtitle("9222777112939","loantitle2");
+		ItemTable.getInstance().createitem("9222777112939");
+		LoanTable.getInstance().createloan(7, "9222777112939", "1", myDate);
+		LoanTable.getInstance().returnItem(7, "9222777112939", "1", new Date());
+		assertEquals(2,FeeTable.getInstance().getFeeTable().size());
+	}
+	
+	@Test
+	public void testReturnApplyFail(){
+		assertNotEquals(2,FeeTable.getInstance().getFeeTable().size());
 	}
 	
 	@AfterClass
