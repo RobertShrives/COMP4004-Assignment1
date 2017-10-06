@@ -215,6 +215,15 @@ public class TestLoanTable {
 		assertEquals(true, LoanTable.getInstance().checkLoan("9781442112000","0"));	
 	}
 	
+	public void testCheckLoanSingleStringPass(){
+		assertEquals(false, LoanTable.getInstance().checkLoan("9781442112000"));	
+	}
+	
+	@Test
+	public void testCheckLoanSingleStringFail(){
+		assertEquals(true, LoanTable.getInstance().checkLoan("9781442112000","0"));	
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
