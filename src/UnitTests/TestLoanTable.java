@@ -2,7 +2,10 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.junit.AfterClass;
 import org.junit.Test;
@@ -32,7 +35,8 @@ import server.logic.tables.UserTable;
  */
 public class TestLoanTable {
 
-	
+	Calendar myCalendar = new GregorianCalendar(2014, 2, 11);
+	Date myDate = myCalendar.getTime();
 	Timestamp stamp = new Timestamp(System.currentTimeMillis());
 	Date date = new Date(stamp.getDateTime());
 
@@ -188,8 +192,17 @@ public class TestLoanTable {
 	
 	@Test
 	public void testLookLimitFail(){
-		assertEquals(false, LoanTable.getInstance().looklimit(1));
-		
+		assertEquals(false, LoanTable.getInstance().looklimit(1));	
+	}
+	
+	@Test
+	public void testCheckUserPass(){
+		assertEquals(false, LoanTable.getInstance().checkUser(5));	
+	}
+	
+	@Test
+	public void testCheckUserFail(){
+		assertEquals(true, LoanTable.getInstance().checkUser(0));	
 	}
 	
 	@AfterClass
