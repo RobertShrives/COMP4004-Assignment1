@@ -220,4 +220,19 @@ public class TestOutputHandler {
 	public void testClerkLoginWrongPassword() {
 		assertEquals("Wrong Password!Please Input The Password:", outHandler.clerkLogin("wrong pass").getOutput());
 	}
+	
+	@Test
+	public void testUserLoginSuccess() {
+		assertEquals("What can I do for you?Menu:Borrow,Renew,Return,Pay Fine.", outHandler.userLogin("Joeshmoe@mail.com,knucklebreaker").getOutput());
+	}
+	
+	@Test
+	public void testUserLoginWrongPassword() {
+		assertEquals("Wrong Password!Please Input Username and Password:'username,password'", outHandler.userLogin("Joeshmoe@mail.com, knucklebreaker").getOutput());
+	}
+	
+	@Test
+	public void testUserLoginUserDoesntExist() {
+		assertEquals("The User Does Not Exist!Please The Username and Password:'username,password'", outHandler.userLogin("1@mail.com,knucklebreaker").getOutput());
+	}
 }
