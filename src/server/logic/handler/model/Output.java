@@ -18,4 +18,8 @@ public class Output {
 		this.output = output;
 	}
 	
+	public int getState() {
+		return state;
+	}
+	
 }

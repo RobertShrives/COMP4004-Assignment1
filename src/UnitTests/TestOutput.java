@@ -33,6 +33,9 @@ public class TestOutput {
 		assertEquals("setting output", out.getOutput());
 	}
 	
-	
+	@Test
+	public void testGetState() {
+		assertEquals(0, out.getState());
+	}
 
 }
