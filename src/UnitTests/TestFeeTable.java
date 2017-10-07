@@ -102,7 +102,6 @@ public class TestFeeTable {
 		ItemTable.getInstance().createitem("9421442112938");
 		List<Loan> loanList=LoanTable.getInstance().getLoanTable();
 		LoanTable.getInstance().createloan(6, "9421442112938", "1", myDate);
-		System.out.println(LoanTable.getInstance().getLoanTable());
 		FeeTable.getInstance().applyfee(6, new Date().getTime()-loanList.get(4).getDate().getTime());
 		LoanTable.getInstance().returnItem(6, "9421442112938", "1", date);
 		assertEquals("success", FeeTable.getInstance().payfine(6));
@@ -111,7 +110,6 @@ public class TestFeeTable {
 	
 	@Test
 	public void testPayFineFail(){
-		System.out.println(FeeTable.getInstance().getFeeTable());
 		assertNotEquals("fail", FeeTable.getInstance().payfine(6));	
 	}
 	

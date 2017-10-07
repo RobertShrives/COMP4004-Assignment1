@@ -44,7 +44,9 @@ public class TestLoanTable {
 	public void testCreateLoanTableSuccessPass() {
 		TitleTable.getInstance().createtitle("9781442","test");
 		ItemTable.getInstance().createitem("9781442");
-		assertEquals("success", LoanTable.getInstance().createloan(4, "9781442", "1", date));
+		System.out.println("user "+ UserTable.getInstance().getUserTable());
+		System.out.println("loan "+LoanTable.getInstance().getLoanTable());
+		assertEquals("success", LoanTable.getInstance().createloan(2, "9781442", "1", date));
 	}
 	
 	@Test
@@ -87,12 +89,14 @@ public class TestLoanTable {
 	
 	@Test
 	public void testCreateLoanTableOfeePass() {
-		assertEquals("Outstanding Fee Exists", LoanTable.getInstance().createloan(0, "9781442616899", "1", date));
+		TitleTable.getInstance().createtitle("7895485632154","test5");
+		ItemTable.getInstance().createitem("7895485632154");
+		assertEquals("Outstanding Fee Exists", LoanTable.getInstance().createloan(7, "7895485632154", "1", date));
 	}
 	
 	@Test
 	public void testCreateLoanTableOfeeFail() {
-		assertNotEquals("success", LoanTable.getInstance().createloan(0, "9781442616899", "1", date));
+		assertNotEquals("success", LoanTable.getInstance().createloan(7, "9781442616899", "1", date));
 	}
 	
 	@Test
@@ -186,7 +190,6 @@ public class TestLoanTable {
 	
 	@Test
 	public void testLookLimitPass(){
-		System.out.println(LoanTable.getInstance().looklimit(0));
 		assertEquals(true, LoanTable.getInstance().looklimit(0));
 		
 	}
@@ -208,7 +211,6 @@ public class TestLoanTable {
 	
 	@Test
 	public void testCheckLoanDblStringPass(){
-		System.out.println(LoanTable.getInstance().getLoanTable());
 		assertEquals(false, LoanTable.getInstance().checkLoan("9781442668584","1"));	
 	}
 	
@@ -277,7 +279,8 @@ public class TestLoanTable {
 	
 	@Test
 	public void testRenewOustandingFeePass(){
-		assertEquals("Outstanding Fee Exists", LoanTable.getInstance().renewal(0, "9781442111000", "1", myDate));		
+		FeeTable.getInstance().getFeeTable();
+		assertEquals("Outstanding Fee Exists", LoanTable.getInstance().renewal(7, "9781442111000", "1", myDate));		
 	}
 	
 	@Test
