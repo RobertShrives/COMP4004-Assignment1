@@ -88,8 +88,8 @@ public class UserTable {
 			result="The User Does Not Exist";
 		}else{
 			boolean fee=FeeTable.getInstance().lookup(i);
-			String string=userList.get(index).getUsername();
-			String string2=userList.get(index).getPassword();
+			String string = userList.get(index).getUsername();
+			String string2 = userList.get(index).getPassword();
 			if(fee && loan){
 				userList.get(index).setUserid(i);
 				userList.get(index).setPassword("N/A");
@@ -105,5 +105,16 @@ public class UserTable {
 		return result;
 
 	}
+	
+	public int lookup(String string) {
+		int userid=-1;
+		for(int i=0;i<userList.size();i++){
+			if(userList.get(i).getUsername().equalsIgnoreCase(string)){
+				userid=i;
+			}
+		}
+		return userid;
+	}
+	
 	
 }

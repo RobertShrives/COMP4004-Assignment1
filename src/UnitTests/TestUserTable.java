@@ -61,14 +61,22 @@ public class TestUserTable {
 	
 	@Test
 	public void testDeletePass() {
-		System.out.println(UserTable.getInstance().getUserTable());
 		assertEquals("success" , UserTable.getInstance().delete(6));
 	}
 	
 	@Test
 	public void testDeleteFail() {
-		System.out.println(FeeTable.getInstance().getFeeTable());
 		assertNotEquals("Outstanding Fee Exists" , UserTable.getInstance().delete(4));
+	}
+	
+	@Test
+	public void testLookupPass() {
+		assertEquals(0 , UserTable.getInstance().lookup("Rob@carleton.ca"));
+	}
+	
+	@Test
+	public void testLookupFail() {
+		assertNotEquals(3 , UserTable.getInstance().lookup("Rob@carleton.ca"));
 	}
 	
 	@AfterClass
