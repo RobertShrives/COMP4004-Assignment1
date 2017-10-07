@@ -67,4 +67,19 @@ public class TestOutputHandler {
 	public void testCreateTitleUserWrongFormat() {
 		assertEquals("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", outHandler.createTitle("42587412dscsd741, B").getOutput());
 	}
+	
+	@Test
+	public void testCreateItemSuccess() {
+		assertEquals("Success!", outHandler.createItem("4258741268741").getOutput());
+	}
+	
+	@Test
+	public void testCreateItemDoesntExist() {
+		assertEquals("The Title Does Not Exists!", outHandler.createItem("4258741268742").getOutput());
+	}
+	
+	@Test
+	public void testCreateItemWrongFormat() {
+		assertEquals("Your input should in this format:'ISBN',ISBN should be a 13-digit number", outHandler.createItem("1").getOutput());
+	}
 }
