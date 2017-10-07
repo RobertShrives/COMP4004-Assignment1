@@ -53,4 +53,18 @@ public class TestOutputHandler {
 		assertEquals(false, outHandler.isInteger("425868741"));
 	}
 	
+	@Test
+	public void testCreateTitleSuccess() {
+		assertEquals("Success!", outHandler.createTitle("4258741268741, BeetleJuice").getOutput());
+	}
+	
+	@Test
+	public void testCreateTitleAlreadyExists() {
+		assertEquals("The Title Already Exists!", outHandler.createTitle("4258741268741, BeetleJuice").getOutput());
+	}
+	
+	@Test
+	public void testCreateTitleUserWrongFormat() {
+		assertEquals("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", outHandler.createTitle("42587412dscsd741, B").getOutput());
+	}
 }
