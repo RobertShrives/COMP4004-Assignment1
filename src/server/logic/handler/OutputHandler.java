@@ -4,6 +4,7 @@ package server.logic.handler;
 import java.util.Date;
 
 import server.logic.handler.model.Output;
+import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
 import server.logic.tables.TitleTable;
@@ -279,7 +280,32 @@ public class OutputHandler {
         	output.setState(USER);
         }
 		return output;
-
+	}
+	
+	public Output payFine(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean email=strArray[0].contains("@");
+        int userid=UserTable.getInstance().lookup(strArray[0]);
+        Object result="";
+        if(strArray.length!=1 || email!=true){
+        	output.setOutput("Your input should in this format:'useremail'");
+        	output.setState(PAYFINE);
+        }else if(userid==-1){
+        	output.setOutput("The User Does Not Exist!");
+        	output.setState(PAYFINE);
+        }else{
+        	result=FeeTable.getInstance().payfine(userid);	
+        	if(result.equals("success")){
+        		output.setOutput("Success!");
+        		}else{
+            		output.setOutput(result+"!");
+            	}
+        		output.setState(USER);
+        	}
+        	
+		return output;
 	}
 	
 }

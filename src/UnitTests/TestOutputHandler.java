@@ -195,4 +195,19 @@ public class TestOutputHandler {
 	public void testReturnWrongFormat() {
 		assertEquals("Your input should in this format:'useremail,ISBN,copynumber'", outHandler.returnBook("1").getOutput());
 	}
+	
+	@Test
+	public void testPayFineSuccess() {
+		assertEquals("Success!", outHandler.payFine("rob@carleton.ca").getOutput());
+	}
+	
+	@Test
+	public void testPayFineUserDoesntExist() {
+		assertEquals("The User Does Not Exist!", outHandler.payFine("1@carleton.ca").getOutput());
+	}
+	
+	@Test
+	public void testPayFineWrongFormat() {
+		assertEquals("Your input should in this format:'useremail'", outHandler.payFine("11a").getOutput());
+	}
 }
