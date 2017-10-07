@@ -45,7 +45,7 @@ public class TestFeeTable {
 		List<Loan> loanList=LoanTable.getInstance().getLoanTable();
 		LoanTable.getInstance().createloan(5, "9781442112939", "1", myDate);
 		FeeTable.getInstance().applyfee(5, new Date().getTime()-loanList.get(0).getDate().getTime());
-		assertEquals( 2 ,FeeTable.getInstance().getFeeTable().size());
+		assertEquals( 3 ,FeeTable.getInstance().getFeeTable().size());
 	}
 
 	@Test
@@ -68,7 +68,7 @@ public class TestFeeTable {
 		LoanTable.getInstance().createloan(5, "9781442112932", "1", myDate);
 		FeeTable.getInstance().applyfee(5, new Date().getTime()-loanList.get(0).getDate().getTime());
 
-		assertEquals( 2 ,FeeTable.getInstance().getFeeTable().size());
+		assertEquals( 3 ,FeeTable.getInstance().getFeeTable().size());
 	}
 	
 	@Test
@@ -94,6 +94,27 @@ public class TestFeeTable {
 		assertNotEquals(4, FeeTable.getInstance().lookupfee(0));
 		
 	}
+	
+	@Test
+	public void testPayFinePass(){
+		UserTable.getInstance().createuser("Eelil@gmail.com", "Pass");
+		TitleTable.getInstance().createtitle("9421442112938","test");
+		ItemTable.getInstance().createitem("9421442112938");
+		List<Loan> loanList=LoanTable.getInstance().getLoanTable();
+		LoanTable.getInstance().createloan(6, "9421442112938", "1", myDate);
+		System.out.println(LoanTable.getInstance().getLoanTable());
+		FeeTable.getInstance().applyfee(6, new Date().getTime()-loanList.get(4).getDate().getTime());
+		LoanTable.getInstance().returnItem(6, "9421442112938", "1", date);
+		assertEquals("success", FeeTable.getInstance().payfine(6));
+		
+	}
+	
+	@Test
+	public void testPayFineFail(){
+		System.out.println(FeeTable.getInstance().getFeeTable());
+		assertNotEquals("fail", FeeTable.getInstance().payfine(6));	
+	}
+	
 	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
