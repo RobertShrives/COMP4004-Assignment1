@@ -14,7 +14,7 @@ import server.logic.tables.UserTable;
 
 public class TestItemTable {
 
-
+	
 	@Test
 	public void testCreateItemTablePass() {
 		TitleTable.getInstance().createtitle("9781442","test");
@@ -53,9 +53,6 @@ public class TestItemTable {
 		assertNotEquals(10, ItemTable.getInstance().getItemTable().size());
 	}
 	
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 	
 	@Test
 	public void testDeleteItemSuccessPass() {
@@ -73,24 +70,20 @@ public class TestItemTable {
 	//all test
 	@Test
 	public void testDeleteItemActiveLoanExistsPass() {
-		System.out.println(TitleTable.getInstance().createtitle("7894563214564","item delete test"));
-		System.out.println(ItemTable.getInstance().createitem("7894563214564"));
-		System.out.println(UserTable.getInstance().createuser("Joe@email.com", "string2"));
-		System.out.println(LoanTable.getInstance().createloan(4, "7894563214564", "1", new Date()));
-		System.out.println(ItemTable.getInstance().getItemTable());
-		System.out.println(UserTable.getInstance().getUserTable());
+		TitleTable.getInstance().createtitle("7894563214564","item delete test");
+		ItemTable.getInstance().createitem("7894563214564");
+		UserTable.getInstance().createuser("Joe@email.com", "string2");
+		LoanTable.getInstance().createloan(4, "7894563214564", "1", new Date());
 		assertEquals("Active Loan Exists", ItemTable.getInstance().delete("7894563214564", "1"));
-		System.out.println(ItemTable.getInstance().getItemTable());
 	}
 	
 	@Test
 	public void testDeleteItemActiveLoanExistsFail() {
-		System.out.println(TitleTable.getInstance().createtitle("7894563214564","item delete test"));
-		System.out.println(ItemTable.getInstance().createitem("7894563214564"));
-		System.out.println(UserTable.getInstance().createuser("Joe@email.com", "string2"));
-		System.out.println(LoanTable.getInstance().createloan(4, "7894563214564", "1", new Date()));
-		System.out.println(ItemTable.getInstance().getItemTable());
-		System.out.println(UserTable.getInstance().getUserTable());
+		TitleTable.getInstance().createtitle("7894563214564","item delete test");
+		ItemTable.getInstance().createitem("7894563214564");
+		UserTable.getInstance().createuser("Joe@email.com", "string2");
+		LoanTable.getInstance().createloan(4, "7894563214564", "1", new Date());
+		
 		assertNotEquals("success", ItemTable.getInstance().delete("7894563214564", "1"));
 	}
 	
@@ -104,6 +97,20 @@ public class TestItemTable {
 		assertNotEquals("success", ItemTable.getInstance().delete("7894563214888", "1"));
 	}
 	
-	//Delete all
+	@Test
+	public void testDeleteAll() {
+		TitleTable.getInstance().createtitle("7894563288888","item deleteAll test");
+		ItemTable.getInstance().createitem("7894563288888");
+		ItemTable.getInstance().createitem("7894563288888");
+		ItemTable.getInstance().createitem("7894563288888");
+		ItemTable.getInstance().createitem("7894563288888");
+		ItemTable.getInstance().deleteAll("7894563288888");
+		ItemTable.getInstance().lookup("9781442668584", "1");
+		assertEquals(false, ItemTable.getInstance().lookup("7894563288888", "1"));
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
 
 }
