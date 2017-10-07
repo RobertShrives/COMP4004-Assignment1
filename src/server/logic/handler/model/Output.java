@@ -10,5 +10,8 @@ public class Output {
 		
 	}
 	
+	public String getOutput() {
+		return output;
+	}
 	
 }

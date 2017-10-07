@@ -20,5 +20,11 @@ public class TestOutput {
 	public void testOutputConstructorFail() {
 		assertNull(dummy);
 	}
+	
+	@Test
+	public void getOutput() {
+		assertNotNull(out.getOutput());
+	}
+	
 
 }
