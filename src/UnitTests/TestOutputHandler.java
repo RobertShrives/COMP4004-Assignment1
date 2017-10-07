@@ -43,5 +43,14 @@ public class TestOutputHandler {
 		assertEquals("Your input should in this format:'username,password'", outHandler.createUser("mikes@gmail.com").getOutput());
 	}
 	
-
+	@Test
+	public void testIsIntegerPass() {
+		assertEquals(true, outHandler.isInteger("4258741268741"));
+	}
+	
+	@Test
+	public void testIsIntegerFail() {
+		assertEquals(false, outHandler.isInteger("425868741"));
+	}
+	
 }

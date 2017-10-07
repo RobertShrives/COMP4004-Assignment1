@@ -2,6 +2,7 @@ package server.logic.handler;
 
 
 import server.logic.handler.model.Output;
+import server.logic.tables.TitleTable;
 import server.logic.tables.UserTable;
 
 public class OutputHandler {
@@ -42,5 +43,18 @@ public class OutputHandler {
         }
 		return output;
 	}
+	
+	public static boolean isInteger(String value) {
+		char[] ch = value.toCharArray();
+		boolean isNumber=true;
+		if(value.length()==13){
+			for (int i = 0; i < ch.length; i++) {
+				isNumber = Character.isDigit(ch[i]);
+			}
+		}else{
+			isNumber=false;
+		}
+		return isNumber;
+		 }
 	
 }
