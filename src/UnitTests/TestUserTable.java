@@ -79,6 +79,16 @@ public class TestUserTable {
 		assertNotEquals(3 , UserTable.getInstance().lookup("Rob@carleton.ca"));
 	}
 	
+	@Test
+	public void testCheckUserPass() {
+		assertEquals(0 , UserTable.getInstance().checkUser("Rob@carleton.ca", "Rob"));
+	}
+	
+	@Test
+	public void testCheckUserFail() {
+		assertNotEquals(1 , UserTable.getInstance().checkUser("Rob@carleton.ca", "Rob"));
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
