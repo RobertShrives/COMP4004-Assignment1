@@ -27,5 +27,21 @@ public class TestOutputHandler {
 	public void testCreateOutputHandlerFail() {
 		assertNull(outHandler2);
 	}
+	
+	@Test
+	public void testCreateUserSuccess() {
+		assertEquals("Success!", outHandler.createUser("robshrives@gmail.com, cheese").getOutput());
+	}
+	
+	@Test
+	public void testCreateUserAlreadyExists() {
+		assertEquals("The User Already Exists!", outHandler.createUser("Jenny@carleton.ca, Jenny").getOutput());
+	}
+	
+	@Test
+	public void testCreateUserWrongFormat() {
+		assertEquals("Your input should in this format:'username,password'", outHandler.createUser("mikes@gmail.com").getOutput());
+	}
+	
 
 }
