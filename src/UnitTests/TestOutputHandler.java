@@ -114,4 +114,14 @@ public class TestOutputHandler {
 		assertEquals("Your input should in this format:'ISBN',ISBN should be a 13-digit number", outHandler.deleteTitle("1").getOutput());
 	}
 	
+	@Test
+	public void testIsNumberPass() {
+		assertEquals(true, outHandler.isNumber("5"));
+	}
+	
+	@Test
+	public void testIsNumberFail() {
+		assertEquals(false, outHandler.isNumber("hello"));
+	}
+	
 }
