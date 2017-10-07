@@ -139,4 +139,23 @@ public class TestOutputHandler {
 		ItemTable.getInstance().getItemTable();
 		assertEquals("Your input should in this format:'ISBN,copynumber',ISBN should be a 13-digit number" , outHandler.deleteItem("weqeqd").getOutput());
 	}
+	
+	@Test
+	public void testBorrowItemSuccess() {
+		TitleTable.getInstance().createtitle("9894561236987", "delet bopok lawl");
+		ItemTable.getInstance().createitem("9894561236987");
+		UserTable.getInstance().createuser("Joeshmoe@mail.com", "knucklebreaker");
+		assertEquals("Success!", outHandler.borrow("Joeshmoe@mail.com,9894561236987,1").getOutput());
+	}
+	
+	@Test
+	public void testBorrowItemDoesntExist() {
+		assertEquals("The User Does Not Exist!", outHandler.borrow("22@mail.com,9894561236987,1").getOutput());
+	}
+	
+	@Test
+	public void testBorrowItemWrongFormat() {
+		assertEquals("Your input should in this format:'useremail,ISBN,copynumber'", outHandler.borrow("cheese").getOutput());
+	}
+	
 }
