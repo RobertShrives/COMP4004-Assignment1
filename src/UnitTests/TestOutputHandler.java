@@ -176,4 +176,23 @@ public class TestOutputHandler {
 		assertEquals("Your input should in this format:'useremail,ISBN,copynumber'", outHandler.renew("11").getOutput());
 	}
 	
+	@Test
+	public void testReturnBookSuccess() {
+		TitleTable.getInstance().createtitle("9894561236988", "delet bopok lawl");
+		ItemTable.getInstance().createitem("9894561236988");
+		UserTable.getInstance().createuser("Joeshmoe@mail.com", "knucklebreaker");
+		LoanTable.getInstance().getLoanTable();
+		outHandler.borrow("Joeshmoe@mail.com,9894561236988,1").getOutput();
+		assertEquals("Success!", outHandler.returnBook("Joeshmoe@mail.com,9894561236988,1").getOutput());
+	}
+	
+	@Test
+	public void testReturnUserDoesntExist() {
+		assertEquals("The User Does Not Exist!", outHandler.returnBook("4@mail.com,9894561236988,1").getOutput());
+	}
+	
+	@Test
+	public void testReturnWrongFormat() {
+		assertEquals("Your input should in this format:'useremail,ISBN,copynumber'", outHandler.returnBook("1").getOutput());
+	}
 }
