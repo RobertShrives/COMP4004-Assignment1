@@ -82,4 +82,19 @@ public class TestOutputHandler {
 	public void testCreateItemWrongFormat() {
 		assertEquals("Your input should in this format:'ISBN',ISBN should be a 13-digit number", outHandler.createItem("1").getOutput());
 	}
+	
+	@Test
+	public void testDeleteUserSuccess() {
+		assertEquals("Success!", outHandler.deleteUser("Alice@carleton.ca").getOutput());
+	}
+	
+	@Test
+	public void testDeleteUserDoesntExist() {
+		assertEquals("The User Does Not Exist!", outHandler.deleteUser("Alice@carleton.ca").getOutput());
+	}
+	
+	@Test
+	public void testDeleteUserWrongFormat() {
+		assertEquals("Your input should in this format:'useremail'", outHandler.deleteUser("1").getOutput());
+	}
 }
