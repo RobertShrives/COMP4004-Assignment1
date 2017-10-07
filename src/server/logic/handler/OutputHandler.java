@@ -9,6 +9,7 @@ import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
 import server.logic.tables.TitleTable;
 import server.logic.tables.UserTable;
+import utilities.Config;
 
 public class OutputHandler {
 	public static final int WAITING = 0;
@@ -305,6 +306,18 @@ public class OutputHandler {
         		output.setState(USER);
         	}
         	
+		return output;
+	}
+	
+	public Output clerkLogin(String input) {
+		Output output=new Output("",0);
+		if(input.equalsIgnoreCase(Config.CLERK_PASSWORD)){
+			output.setOutput("What can I do for you?Menu:Create User/Create Title/Create Item, Delete User/Delete Title/Delete Item.");
+        	output.setState(CLERK);
+		}else{
+			output.setOutput("Wrong Password!Please Input The Password:");
+        	output.setState(CLERKLOGIN);
+		}
 		return output;
 	}
 	

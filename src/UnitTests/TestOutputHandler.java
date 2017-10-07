@@ -210,4 +210,14 @@ public class TestOutputHandler {
 	public void testPayFineWrongFormat() {
 		assertEquals("Your input should in this format:'useremail'", outHandler.payFine("11a").getOutput());
 	}
+	
+	@Test
+	public void testClerkLoginSuccess() {
+		assertEquals("What can I do for you?Menu:Create User/Create Title/Create Item, Delete User/Delete Title/Delete Item.", outHandler.clerkLogin("admin").getOutput());
+	}
+	
+	@Test
+	public void testClerkLoginWrongPassword() {
+		assertEquals("Wrong Password!Please Input The Password:", outHandler.clerkLogin("wrong pass").getOutput());
+	}
 }
