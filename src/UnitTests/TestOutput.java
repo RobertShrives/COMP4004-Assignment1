@@ -11,6 +11,7 @@ public class TestOutput {
 
 	Output out = new Output("hello", 0);
 	Output dummy;
+	
 	@Test
 	public void testOutputConstructorPass() {
 		assertNotNull(out);
@@ -22,9 +23,16 @@ public class TestOutput {
 	}
 	
 	@Test
-	public void getOutput() {
+	public void testGetOutput() {
 		assertNotNull(out.getOutput());
 	}
+	
+	@Test
+	public void testSetOutput() {
+		out.setOutput("setting output");
+		assertEquals("setting output", out.getOutput());
+	}
+	
 	
 
 }

@@ -14,4 +14,8 @@ public class Output {
 		return output;
 	}
 	
+	public void setOutput(String output) {
+		this.output = output;
+	}
+	
 }
