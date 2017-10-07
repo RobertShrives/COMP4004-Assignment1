@@ -124,4 +124,19 @@ public class TestOutputHandler {
 		assertEquals(false, outHandler.isNumber("hello"));
 	}
 	
+	@Test
+	public void testDeleteItemSuccess() {
+		TitleTable.getInstance().createtitle("7894561236987", "delet bopok");
+		ItemTable.getInstance().createitem("7894561236987");
+		ItemTable.getInstance().getItemTable();
+		assertEquals("Success!", outHandler.deleteItem("7894561236987,1").getOutput());
+	}
+	
+	@Test
+	public void testDeleteItemWrongFormat() {
+		TitleTable.getInstance().createtitle("7894561236987", "delet bopok");
+		ItemTable.getInstance().createitem("7894561236987");
+		ItemTable.getInstance().getItemTable();
+		assertEquals("Your input should in this format:'ISBN,copynumber',ISBN should be a 13-digit number" , outHandler.deleteItem("weqeqd").getOutput());
+	}
 }
