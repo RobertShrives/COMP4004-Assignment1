@@ -2,13 +2,30 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+
 import org.junit.AfterClass;
 import org.junit.Test;
 
+import com.sun.jmx.snmp.Timestamp;
+
+import server.logic.model.Loan;
+import server.logic.tables.FeeTable;
+import server.logic.tables.ItemTable;
+import server.logic.tables.LoanTable;
+import server.logic.tables.TitleTable;
 import server.logic.tables.UserTable;
 
 public class TestUserTable {
 	
+
+	Timestamp stamp = new Timestamp(System.currentTimeMillis());
+	Date date = new Date(stamp.getDateTime());
+	Calendar myCalendar = new GregorianCalendar(2014, 2, 11);
+	Date myDate = myCalendar.getTime();
 	
 	@Test
 	public void testCreateUserPass() {
@@ -40,6 +57,18 @@ public class TestUserTable {
 	@Test
 	public void testGetUserTableFail() {
 		assertNotEquals(9, UserTable.getInstance().getUserTable().size());
+	}
+	
+	@Test
+	public void testDeletePass() {
+		System.out.println(UserTable.getInstance().getUserTable());
+		assertEquals("success" , UserTable.getInstance().delete(6));
+	}
+	
+	@Test
+	public void testDeleteFail() {
+		System.out.println(FeeTable.getInstance().getFeeTable());
+		assertNotEquals("Outstanding Fee Exists" , UserTable.getInstance().delete(4));
 	}
 	
 	@AfterClass

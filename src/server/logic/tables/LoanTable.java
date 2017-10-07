@@ -1,7 +1,6 @@
 package server.logic.tables;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,6 +14,12 @@ public class LoanTable {
     private static class LoanListHolder {
         private static final LoanTable INSTANCE = new LoanTable();
     }
+    
+    private LoanTable(){
+    	//set up the default list with some instances
+    	Loan loan=new Loan(4,"9781442668584","1",new Date(),"0");
+    	loanList.add(loan);
+    };
     
     public static final LoanTable getInstance() {
         return LoanListHolder.INSTANCE;
@@ -165,12 +170,6 @@ public class LoanTable {
 			result=false;
 		}
 		return result;
-	}
-    
-    private String dateformat(Date date){
-		DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		String datestr=format1.format(date);
-		return datestr;
 	}
     
     public Object renewal(int j, String string, String string2, Date date) {

@@ -171,7 +171,7 @@ public class TestLoanTable {
 		TitleTable.getInstance().createtitle("9781442112000","test");
 		ItemTable.getInstance().createitem("9781442112000");
 		LoanTable.getInstance().createloan(5, "9781442112000", "1", date);
-		assertEquals(5, LoanTable.getInstance().getLoanTable().size());
+		assertEquals(6, LoanTable.getInstance().getLoanTable().size());
 	}
 	
 	@Test
@@ -186,6 +186,7 @@ public class TestLoanTable {
 	
 	@Test
 	public void testLookLimitPass(){
+		System.out.println(LoanTable.getInstance().looklimit(0));
 		assertEquals(true, LoanTable.getInstance().looklimit(0));
 		
 	}
@@ -207,7 +208,8 @@ public class TestLoanTable {
 	
 	@Test
 	public void testCheckLoanDblStringPass(){
-		assertEquals(false, LoanTable.getInstance().checkLoan("9781442112000","1"));	
+		System.out.println(LoanTable.getInstance().getLoanTable());
+		assertEquals(false, LoanTable.getInstance().checkLoan("9781442668584","1"));	
 	}
 	
 	@Test
@@ -280,7 +282,7 @@ public class TestLoanTable {
 	
 	@Test
 	public void testRenewOustandingFeeFail(){
-		assertNotEquals("The loan does not exist", LoanTable.getInstance().renewal(0, "9781442111000", "1", myDate));		
+		assertNotEquals("fail", LoanTable.getInstance().renewal(0, "9781442111000", "1", myDate));		
 	}
 	
 	@Test
@@ -314,12 +316,12 @@ public class TestLoanTable {
 		ItemTable.getInstance().createitem("9222777112939");
 		LoanTable.getInstance().createloan(7, "9222777112939", "1", myDate);
 		LoanTable.getInstance().returnItem(7, "9222777112939", "1", new Date());
-		assertEquals(2,FeeTable.getInstance().getFeeTable().size());
+		assertEquals(3, FeeTable.getInstance().getFeeTable().size());
 	}
 	
 	@Test
 	public void testReturnApplyFail(){
-		assertNotEquals(2,FeeTable.getInstance().getFeeTable().size());
+		assertNotEquals(5,FeeTable.getInstance().getFeeTable().size());
 	}
 	
 	@AfterClass
