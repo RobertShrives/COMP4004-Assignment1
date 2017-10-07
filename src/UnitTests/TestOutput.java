@@ -2,7 +2,6 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
-import org.junit.AfterClass;
 import org.junit.Test;
 
 import server.logic.handler.model.Output;
@@ -37,5 +36,10 @@ public class TestOutput {
 	public void testGetState() {
 		assertEquals(0, out.getState());
 	}
-
+	
+	@Test
+	public void testSetState() {
+		out.setState(1);
+		assertEquals(1, out.getState());
+	}
 }
