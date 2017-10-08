@@ -9,4 +9,8 @@ public class ServerOutput {
 		this.state=state;	
 	}
 	
+	public String getOutput() {
+		return output;
+	}
+	
 }

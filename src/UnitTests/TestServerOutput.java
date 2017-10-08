@@ -20,5 +20,20 @@ public class TestServerOutput {
 	public void testServerOutputConstructorPass() {
 		assertNotNull(sOut);
 	}
+	
+	@Test
+	public void testServerOutputConstructorFail() {
+		assertNull(sOut2);
+	}
+	
+	@Test
+	public void testGetOutputPass() {
+		assertEquals("Test", sOut.getOutput());
+	}
+	
+	@Test
+	public void testGetOutputfail() {
+		assertNotEquals("Fail", sOut.getOutput());
+	}
 
 }
