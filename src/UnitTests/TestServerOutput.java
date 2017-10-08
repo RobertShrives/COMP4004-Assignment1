@@ -46,5 +46,15 @@ public class TestServerOutput {
 	public void testSetOutputFail() {
 		assertNotEquals("NotNewMessage", sOut.getOutput());
 	}
+	
+	@Test
+	public void testGetStatePass() {
+		assertEquals(0, sOut.getState());
+	}
+	
+	@Test
+	public void testGetStateFail() {
+		assertNotEquals(1, sOut.getState());
+	}
 
 }
