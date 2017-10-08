@@ -58,7 +58,7 @@ public class TestItemTable {
 	public void testDeleteItemSuccessPass() {
 		TitleTable.getInstance().createtitle("7894563214563","item delete test");
 		ItemTable.getInstance().createitem("7894563214563");
-		assertEquals("success", ItemTable.getInstance().delete("7894563214563", "1"));
+		assertEquals("success", ItemTable.getInstance().delete("9781611687910", "1"));
 	}
 	
 	@Test

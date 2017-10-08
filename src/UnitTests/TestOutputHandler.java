@@ -213,7 +213,7 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testClerkLoginSuccess() {
-		assertEquals("What can I do for you?Menu:Create User/Create Title/Create Item, Delete User/Delete Title/Delete Item.", outHandler.clerkLogin("admin").getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.", outHandler.clerkLogin("admin").getOutput());
 	}
 	
 	@Test
