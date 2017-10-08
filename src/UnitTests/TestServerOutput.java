@@ -56,5 +56,16 @@ public class TestServerOutput {
 	public void testGetStateFail() {
 		assertNotEquals(1, sOut.getState());
 	}
+	
+	@Test
+	public void testSetStatePass() {
+		sOut.setState(3);
+		assertEquals(3, sOut.getState());
+	}
 
+	@Test
+	public void testSetStateFail() {
+		sOut.setState(3);
+		assertNotEquals(2, sOut.getState());
+	}
 }

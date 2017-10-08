@@ -21,4 +21,8 @@ public class ServerOutput {
 		return state;
 	}
 	
+	public void setState(int state) {
+		this.state = state;
+	}
+	
 }
