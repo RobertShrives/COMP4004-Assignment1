@@ -35,5 +35,16 @@ public class TestServerOutput {
 	public void testGetOutputfail() {
 		assertNotEquals("Fail", sOut.getOutput());
 	}
+	
+	@Test
+	public void testSetOutputPass() {
+		sOut.setOutput("NewMessage");
+		assertEquals("NewMessage", sOut.getOutput());
+	}
+	
+	@Test
+	public void testSetOutputFail() {
+		assertNotEquals("NotNewMessage", sOut.getOutput());
+	}
 
 }
