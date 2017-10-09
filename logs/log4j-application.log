@@ -6446,4 +6446,219 @@
 @2017-10-09 17:50:17 INFO  String:110 - Operation:Delete User;User Info:[Gail@carleton.ca,Gail];State:Fail;Reason:Active Loan Exists.
 @2017-10-09 17:50:17 INFO  String:104 - Operation:Delete User;User Info:[newestEmail@gmail.com,Pass];State:Success
 @2017-10-09 17:50:17 INFO  String:45 - Operation:Create New User;User Info:[test2@hotmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Rob@carleton.ca,Rob], [1,Jenny@carleton.ca,Jenny], [2,Alice@carleton.ca,Alice], [3,John@carleton.ca,John], [4,Gail@carleton.ca,Gail]]
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[notEmail@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:28 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,Harry Potter], [9781442616899,Percy Jackson], [9781442667181,Silence of the Lambs], [9781611687910,Lord of the Rings], [9781317594277,Atlas Shrugged]]
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111932,test11];State:Success
+@2017-10-09 18:13:16 INFO  String:27 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111932,1];State:Success
+@2017-10-09 18:13:16 INFO  String:27 - Operation:Initialize LoanTable;LoanTable: [[4,9781442668584,1,2017-10-09 06:13:16,0]]
+@2017-10-09 18:13:16 INFO  String:81 - Operation:Apply OutStanding Fee;Fee Info:[4,0];State:Success
+@2017-10-09 18:13:16 INFO  String:91 - Operation:Initialize FeeTable;FeeTable: [[0,5], [4,0]]
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[5,9781442111932,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:81 - Operation:Apply OutStanding Fee;Fee Info:[5,0];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[newestEmail@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442112932,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442112932,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[5,9781442112932,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:71 - Operation:Apply OutStanding Fee;Fee Info:[5,-5];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Email@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442112938,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442112938,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[5,9781442112938,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:71 - Operation:Apply OutStanding Fee;Fee Info:[5,-5];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[newestEmail@gmail.com,Pass];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442112939,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442112939,1];State:Success
+@2017-10-09 18:13:16 INFO  String:71 - Operation:Apply OutStanding Fee;Fee Info:[5,-5];State:Success
+@2017-10-09 18:13:16 INFO  String:156 - Operation:Pay Fine;Fee Info:[6,0];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Eelil@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9421442112938,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9421442112938,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[6,9421442112938,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:67 - Operation:Apply OutStanding Fee;Fee Info:[6,3769216];State:Success
+@2017-10-09 18:13:16 INFO  String:251 - Operation:Return Item;Loan Info:[6,9421442112938,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:67 - Operation:Apply OutStanding Fee;Fee Info:[6,5653824];State:Success
+@2017-10-09 18:13:16 INFO  String:156 - Operation:Pay Fine;Fee Info:[6,0];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442,1];State:Success
+@2017-10-09 18:13:16 INFO  String:119 - Operation:Delete Item;Item Info:[7894563214563,0];State:Fail;Reason:The Item Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894563214563,item delete test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563214563,1];State:Success
+@2017-10-09 18:13:16 INFO  String:110 - Operation:Delete Item;Item Info:[9781611687910,N/A];State:Success
+@2017-10-09 18:13:16 INFO  String:55 - Operation:Create New Item;Item Info:[11111111111111,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442512345,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442512345,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894563288888,item deleteAll test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563288888,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563288888,2];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563288888,3];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563288888,4];State:Success
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[7894563288888];State:Success
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[7894563288888];State:Success
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[7894563288888];State:Success
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[7894563288888];State:Success
+@2017-10-09 18:13:16 INFO  String:119 - Operation:Delete Item;Item Info:[7894563214888,1];State:Fail;Reason:The Item Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:119 - Operation:Delete Item;Item Info:[7894563214888,1];State:Fail;Reason:The Item Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781444,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781444,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781443,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781443,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894563214564,item delete test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563214564,1];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Joe@email.com,string2];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[4,7894563214564,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:113 - Operation:Delete Item;Item Info:[7894563214564,1];State:Fail;Reason:The item is currently on loan.
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[7894563214564,item delete test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563214564,2];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[Joe@email.com,string2];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:73 - Operation:Borrow Item;Loan Info:[4,7894563214564,1,2017-10-09 06:13:16];State:Fail;Reason:The Item is Not Available.
+@2017-10-09 18:13:16 INFO  String:113 - Operation:Delete Item;Item Info:[7894563214564,1];State:Fail;Reason:The item is currently on loan.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111999,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111999,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111000,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111000,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[3,9781442111000,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111444,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111444,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[1,9781442111444,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111555,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111555,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[1,9781442111555,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111666,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111666,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[1,9781442111666,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[newerEmail@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442112000,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442112000,1];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[newerEmail@gmail.com,Pass];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781442112000,test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442112000,2];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111111,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111111,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[2,9781442111111,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:73 - Operation:Borrow Item;Loan Info:[0,9781442111111,1,2017-10-09 06:13:16];State:Fail;Reason:The Item is Not Available.
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781442111111,test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111111,2];State:Success
+@2017-10-09 18:13:16 INFO  String:73 - Operation:Borrow Item;Loan Info:[1,9781442111111,1,2017-10-09 06:13:16];State:Fail;Reason:The Item is Not Available.
+@2017-10-09 18:13:16 INFO  String:73 - Operation:Borrow Item;Loan Info:[2,9781442111111,1,2017-10-09 06:13:16];State:Fail;Reason:The Item is Not Available.
+@2017-10-09 18:13:16 INFO  String:73 - Operation:Borrow Item;Loan Info:[0,9781442111111,1,2017-10-09 06:13:16];State:Fail;Reason:The Item is Not Available.
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781443,test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781443,2];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[4,9781443,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781442,test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442,2];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[2,9781442,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[loantableEmail@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781342112939,loantitle];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781342112939,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[3,9781342112939,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:225 - Operation:Renew Item;Loan Info:[5,9781342112939,1,2014-03-11 12:00:00];State:Fail;Reason:The Maximun Number of Items is Reached.
+@2017-10-09 18:13:16 INFO  String:225 - Operation:Renew Item;Loan Info:[5,9781342112939,1,2014-03-11 12:00:00];State:Fail;Reason:The Maximun Number of Items is Reached.
+@2017-10-09 18:13:16 INFO  String:213 - Operation:Renew Item;Loan Info:[3,9781442111000,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Parsons@gmail.com,pord];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9222777112939,loantitle2];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9222777112939,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[7,9222777112939,1,2014-03-11 12:00:00];State:Success
+@2017-10-09 18:13:16 INFO  String:251 - Operation:Return Item;Loan Info:[7,9222777112939,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:77 - Operation:Apply OutStanding Fee;Fee Info:[7,1884608];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781442111333,test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111333,1];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781442111333,test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781442111333,2];State:Success
+@2017-10-09 18:13:16 INFO  String:216 - Operation:Renew Item;Loan Info:[3,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:Renewed Item More Than Once for the Same Loan.
+@2017-10-09 18:13:16 INFO  String:216 - Operation:Renew Item;Loan Info:[3,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:Renewed Item More Than Once for the Same Loan.
+@2017-10-09 18:13:16 INFO  String:216 - Operation:Renew Item;Loan Info:[3,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:Renewed Item More Than Once for the Same Loan.
+@2017-10-09 18:13:16 INFO  String:216 - Operation:Renew Item;Loan Info:[3,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:Renewed Item More Than Once for the Same Loan.
+@2017-10-09 18:13:16 INFO  String:220 - Operation:Renew Item;Loan Info:[2,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:The loan does not exist.
+@2017-10-09 18:13:16 INFO  String:220 - Operation:Renew Item;Loan Info:[2,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:The loan does not exist.
+@2017-10-09 18:13:16 INFO  String:258 - Operation:Return Item;Loan Info:[7,9781777112939,1,2017-10-09 06:13:16];State:Fail;Reason:The Loan Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:258 - Operation:Return Item;Loan Info:[7,9781777112939,1,2017-10-09 06:13:16];State:Fail;Reason:The Loan Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:220 - Operation:Renew Item;Loan Info:[0,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:The loan does not exist.
+@2017-10-09 18:13:16 INFO  String:228 - Operation:Renew Item;Loan Info:[7,9781442111000,1,2014-03-11 12:00:00];State:Fail;Reason:Outstanding Fee Exists.
+@2017-10-09 18:13:16 INFO  String:258 - Operation:Return Item;Loan Info:[6,9781777112939,1,2017-10-09 06:13:16];State:Fail;Reason:The Loan Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[testPerson@gmail.com,pword];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781777112939,loantitle2];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781777112939,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[6,9781777112939,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:251 - Operation:Return Item;Loan Info:[6,9781777112939,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781446,test5];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781446,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781447,test6];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781447,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781448,test7];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781448,1];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9781449,test8];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781449,1];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781446,test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781446,2];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781447,test1];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781447,2];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781448,test2];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781448,2];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9781449,test3];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9781449,2];State:Success
+@2017-10-09 18:13:16 INFO  String:225 - Operation:Renew Item;Loan Info:[1,9781442111444,1,2014-03-11 12:00:00];State:Fail;Reason:The Maximun Number of Items is Reached.
+@2017-10-09 18:13:16 INFO  String:225 - Operation:Renew Item;Loan Info:[1,9781342112939,1,2014-03-11 12:00:00];State:Fail;Reason:The Maximun Number of Items is Reached.
+@2017-10-09 18:13:16 INFO  String:69 - Operation:Borrow Item;Loan Info:[7,9781442616899,1,2017-10-09 06:13:16];State:Fail;Reason:Outstanding Fee Exists.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7895485632154,test5];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7895485632154,1];State:Success
+@2017-10-09 18:13:16 INFO  String:69 - Operation:Borrow Item;Loan Info:[7,7895485632154,1,2017-10-09 06:13:16];State:Fail;Reason:Outstanding Fee Exists.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9894561236987,delet bopok lawl];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9894561236987,1];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Joeshmoe@mail.com,knucklebreaker];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[14,9894561236987,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894561236987,delet bopok];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894561236987,1];State:Success
+@2017-10-09 18:13:16 INFO  String:55 - Operation:Create New Item;Item Info:[4258741268742,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[4258741268741, BeetleJuice];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[9894561236988,delet bopok lawl];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9894561236988,1];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[Joeshmoe@mail.com,knucklebreaker];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[14,9894561236988,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:251 - Operation:Return Item;Loan Info:[14,9894561236988,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[7894561236987,delet bopok];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894561236987,2];State:Success
+@2017-10-09 18:13:16 INFO  String:110 - Operation:Delete Item;Item Info:[7894561236987,N/A];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[4258741268741, BeetleJuice];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[Jenny@carleton.ca, Jenny];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Tommy@carleton.ca,bored];State:Success
+@2017-10-09 18:13:16 INFO  String:104 - Operation:Delete User;User Info:[Tommy@carleton.ca,bored];State:Success
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[9781442616899];State:Success
+@2017-10-09 18:13:16 INFO  String:97 - Operation:Delete Title;Title Info:[9781442616899,Percy Jackson];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[4258741268741,1];State:Success
+@2017-10-09 18:13:16 INFO  String:156 - Operation:Pay Fine;Fee Info:[0,0];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[robshrives@gmail.com, cheese];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[9894561236987,delet bopok lawl];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[9894561236987,2];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[Joeshmoe@mail.com,knucklebreaker];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:213 - Operation:Renew Item;Loan Info:[14,9894561236987,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:104 - Operation:Delete Title;ISBN Info:[9781443336899];State:Fail;Reason:The Title Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[Joe@joe,leto];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894563213563,Test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563213563,1];State:Success
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[7894563213563];State:Success
+@2017-10-09 18:13:16 INFO  String:97 - Operation:Delete Title;Title Info:[7894563213563,Test];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[Joe@joe,leto];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894563213563,Test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Item;Item Info:[7894563213563,1];State:Success
+@2017-10-09 18:13:16 INFO  String:63 - Operation:Borrow Item;Loan Info:[2,7894563213563,1,2017-10-09 06:13:16];State:Success
+@2017-10-09 18:13:16 INFO  String:100 - Operation:Delete Title;ISBN Info:[7894563213563];State:Fail;Reason:Active Loan Exists.
+@2017-10-09 18:13:16 INFO  String:104 - Operation:Delete Title;ISBN Info:[111111111];State:Fail;Reason:The Title Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:104 - Operation:Delete Title;ISBN Info:[111111111];State:Fail;Reason:The Title Does Not Exist.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[2222222222222,Test Book2];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[2222222222222,Test Book3];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[1111111111111,Test Book1];State:Success
+@2017-10-09 18:13:16 INFO  String:52 - Operation:Create New Title;Title Info:[7894563214563,Test];State:Fail;Reason:The ISBN already existed.
+@2017-10-09 18:13:16 INFO  String:131 - Operation:Delete Item Due to Title Deletion;ISBN Info:[7894563214563];State:Success
+@2017-10-09 18:13:16 INFO  String:97 - Operation:Delete Title;Title Info:[7894563214563,item delete test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[7894563214563,Test];State:Success
+@2017-10-09 18:13:16 INFO  String:97 - Operation:Delete Title;Title Info:[7894563214563,Test];State:Success
+@2017-10-09 18:13:16 INFO  String:49 - Operation:Create New Title;Title Info:[4444444444444,Test Book 4];State:Success
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[robshrives@gmail.com,Pass];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:48 - Operation:Create New User;User Info:[robshrives@gmail.com,Pass];State:Fail;Reason:The User already existed.
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[newEmail@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:110 - Operation:Delete User;User Info:[Gail@carleton.ca,Gail];State:Fail;Reason:Active Loan Exists.
+@2017-10-09 18:13:16 INFO  String:104 - Operation:Delete User;User Info:[newestEmail@gmail.com,Pass];State:Success
+@2017-10-09 18:13:16 INFO  String:45 - Operation:Create New User;User Info:[test2@hotmail.com,Pass];State:Success
 @
