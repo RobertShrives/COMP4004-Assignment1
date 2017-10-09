@@ -7,6 +7,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+import org.apache.log4j.Logger;
+
+import utilities.Trace;
+
 
 
 /* Modified method based on the course COMP 3004 example*/
@@ -18,7 +22,7 @@ public class ServerThread extends Thread{
 	private BufferedReader streamIn = null;
 	private BufferedWriter streamOut = null;
 	private String clientAddress = null;;
-
+	private Logger logger = Trace.getInstance().getLogger(this);
 	private boolean done = false;
 
 	public ServerThread(LibServer server, Socket socket) {
@@ -39,6 +43,7 @@ public class ServerThread extends Thread{
 			streamOut.flush();
 		} catch (IOException ioe) {
 			String message = String.format("Exception thrown : %s \n", ioe.getMessage());
+			logger.info(String.format ("Class: %-12s: %s",this.getClass().getSimpleName(), message));
 			server.remove(ID);
 		}
 	}
@@ -53,7 +58,7 @@ public class ServerThread extends Thread{
 				server.handle(ID, streamIn.readLine());
 			} catch (IOException ioe) {
 				String message = String.format("Exception thrown : %s \n", ioe.getMessage());
-				
+				logger.info(String.format ("Class: %-12s: %s",this.getClass().getSimpleName(), message));
 				server.remove(ID);
 				break;
 			}}

@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+import org.apache.log4j.Logger;
+
+import utilities.Trace;
+
 /* Modified method based on the course COMP 3004 example*/
 /*Reference:http://people.scs.carleton.ca/~jeanpier//304W16/T1%20TDD/4b-%20ChatExample%20and%20other%20files/*/
 public class ClientThread extends Thread{
@@ -12,7 +16,7 @@ public class ClientThread extends Thread{
 	private LibClient      client   = null;
 	private BufferedReader streamIn = null;
 	private boolean done = false;
-	
+	private Logger logger = Trace.getInstance().getLogger(this);
 	
 	public ClientThread(LibClient client, Socket socket) {  
 		this.client = client;
@@ -25,9 +29,9 @@ public class ClientThread extends Thread{
 		try {  
 			streamIn  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 	    } catch(IOException ioe) {  
-	    	
+	    	logger.info(String.format ("Error getting input stream"));
 	    	String message = String.format("Exception thrown : %s \n", ioe.getMessage());
-			
+	    	logger.info(String.format ("Class: %-12s: %s",this.getClass().getSimpleName(), message));
 			client.stop();
 	    }
 	}

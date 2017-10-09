@@ -96,7 +96,7 @@ public class OutputHandler {
         }else{
         	result=ItemTable.getInstance().createitem(strArray[0]);
         	if(result.equals(true)){
-        		output.setOutput("Success!");
+        		output.setOutput("Success! You have added ISBN#:"+input+" to the Library.");
         	}else{
         		output.setOutput("The Title Does Not Exists!");
         	}
