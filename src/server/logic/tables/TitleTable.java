@@ -106,4 +106,15 @@ public class TitleTable {
 		return result;
 	}
 	
+	public String searchISBN(String string){
+		String result="Item Doesn't exist.";
+
+		for(int i=0;i<titleList.size();i++){
+			if(titleList.get(i).getISBN().equalsIgnoreCase(string)){
+				result = titleList.get(i).getBooktitle();
+			}
+		}
+		return result;
+	}
+	
 }

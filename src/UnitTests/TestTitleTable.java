@@ -88,6 +88,16 @@ public class TestTitleTable {
 		assertNotEquals("success", TitleTable.getInstance().delete("111111111"));
 	}
 	
+	@Test
+	public void testSearchISBNPass() {
+		assertEquals("Harry Potter", TitleTable.getInstance().searchISBN("9781442668584"));
+	}
+	
+	@Test
+	public void testSearchISBNFail() {
+		assertNotEquals("Harry Pothead", TitleTable.getInstance().searchISBN("9781442668584"));
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}

@@ -4,6 +4,7 @@ package server.logic.handler;
 import java.util.Date;
 
 import server.logic.handler.model.Output;
+import server.logic.model.Item;
 import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
@@ -89,18 +90,20 @@ public class OutputHandler {
 		String[] strArray = null;   
         strArray = input.split(",");
         boolean number=isInteger(strArray[0]);
-        Object result="";
+        Item result=null;
         if(strArray.length!=1 || number!=true){
         	output.setOutput("Your input should in this format:'ISBN',ISBN should be a 13-digit number");
         	output.setState(CREATEITEM);
         }else{
-        	result=ItemTable.getInstance().createitem(strArray[0]);
-        	if(result.equals(true)){
-        		output.setOutput("Success! You have added ISBN#:"+input+" to the Library.");
+        	result=(Item)ItemTable.getInstance().createitem(strArray[0]);
+        	if(result != null){
+        		String title = TitleTable.getInstance().searchISBN(result.getISBN());
+        		output.setOutput("ISBN#: " + result.getISBN() + " "+"Book title: " + title);
+        		output.setState(CLERK);
         	}else{
-        		output.setOutput("The Title Does Not Exists!");
+        		output.setOutput("The Title Does Not Exists! Please add it to the library");
+        		output.setState(CREATETITLE);
         	}
-        	output.setState(CLERK);
         }
 		return output;
 	}

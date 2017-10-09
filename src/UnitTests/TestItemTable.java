@@ -17,13 +17,13 @@ public class TestItemTable {
 	
 	@Test
 	public void testCreateItemTablePass() {
-		TitleTable.getInstance().createtitle("9781442","test");
-		assertEquals(true, ItemTable.getInstance().createitem("9781442"));
+		TitleTable.getInstance().createtitle("9781442512345","test");
+		assertEquals("["+ItemTable.getInstance().getItemTable().size()+",9781442512345,1]", ItemTable.getInstance().createitem("9781442512345").toString());
 	}
 	
 	@Test
 	public void testCreateItemTableFail() {
-		assertEquals(false, ItemTable.getInstance().createitem("11111111111111"));
+		assertEquals(null, ItemTable.getInstance().createitem("11111111111111"));
 	}
 	
 	@Test

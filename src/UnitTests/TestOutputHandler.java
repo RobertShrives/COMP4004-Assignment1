@@ -70,12 +70,12 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testCreateItemSuccess() {
-		assertEquals("Success!", outHandler.createItem("4258741268741").getOutput());
+		assertEquals("ISBN#: 4258741268741 " +"Book title: " +TitleTable.getInstance().searchISBN("4258741268741"), outHandler.createItem("4258741268741").getOutput());
 	}
 	
 	@Test
 	public void testCreateItemDoesntExist() {
-		assertEquals("The Title Does Not Exists!", outHandler.createItem("4258741268742").getOutput());
+		assertEquals("The Title Does Not Exists! Please add it to the library", outHandler.createItem("4258741268742").getOutput());
 	}
 	
 	@Test
