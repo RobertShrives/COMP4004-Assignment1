@@ -106,4 +106,69 @@
 @2017-10-10 01:06:05 INFO  String:49 - Operation:Create New Title;Title Info:['123333789985,gudder book'];State:Success
 @2017-10-10 01:06:05 INFO  LibServer:111 - Output to 127.0.0.1:59835 Success!
 
+@2017-10-10 01:31:55 INFO  LibServer:34 - Binding to port 5050
+@2017-10-10 01:31:55 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 01:31:55 INFO  LibServer:48 - Server started: ServerSocket[addr=0.0.0.0/0.0.0.0,localport=5050] 11
+@2017-10-10 01:31:55 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Rob@carleton.ca,Rob], [1,Jenny@carleton.ca,Jenny], [2,Alice@carleton.ca,Alice], [3,John@carleton.ca,John], [4,Gail@carleton.ca,Gail]]
+@2017-10-10 01:31:55 INFO  String:28 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,Harry Potter], [9781442616899,Percy Jackson], [9781442667181,Silence of the Lambs], [9781611687910,Lord of the Rings], [9781317594277,Atlas Shrugged]]
+@2017-10-10 01:31:55 INFO  String:27 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 01:31:55 INFO  String:27 - Operation:Initialize LoanTable;LoanTable: [[4,9781442668584,1,2017-10-10 01:31:55,0]]
+@2017-10-10 01:31:55 INFO  String:81 - Operation:Apply OutStanding Fee;Fee Info:[4,0];State:Success
+@2017-10-10 01:31:55 INFO  String:91 - Operation:Initialize FeeTable;FeeTable: [[0,5], [4,0]]
+@2017-10-10 01:31:55 INFO  LibClient:32 - 60139 : Connected to server: /127.0.0.1
+@2017-10-10 01:31:55 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:60139] Client Socket: [60139 ]
+
+@2017-10-10 01:31:55 INFO  LibClient:33 - 60139 : Connected to portid: 60139
+@2017-10-10 01:31:55 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 Hello
+@2017-10-10 01:31:55 INFO  LibServer:119 - Output to 127.0.0.1:60139 Who Are you?Clerk or User?
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 Clerk
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 Please Input The Password:
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 admin
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 Create Item
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 Please Input Item Info:'ISBN'
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 3731442668584
+@2017-10-10 01:31:55 INFO  String:55 - Operation:Create New Item;Item Info:[3731442668584,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 The Title Does Not Exists! Please add it to the library
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 Create Title
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 Your input should in this format:'ISBN,title',ISBN should be a 13-digit number
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 3731442668584,book
+@2017-10-10 01:31:55 INFO  String:49 - Operation:Create New Title;Title Info:[3731442668584,book];State:Success
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 Success!
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 Create Item
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 Please Input Item Info:'ISBN'
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60139 3731442668584
+@2017-10-10 01:31:55 INFO  String:49 - Operation:Create New Item;Item Info:[3731442668584,1];State:Success
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60139 ISBN#: 3731442668584 Book title: book
+
+@2017-10-10 01:31:55 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:60140] Client Socket: [60140 ]
+
+@2017-10-10 01:31:55 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 01:31:55 INFO  LibClient:32 - 60140 : Connected to server: /127.0.0.1
+@2017-10-10 01:31:55 INFO  LibClient:33 - 60140 : Connected to portid: 60140
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60140 Hello
+@2017-10-10 01:31:55 INFO  LibServer:119 - Output to 127.0.0.1:60140 Who Are you?Clerk or User?
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60140 Clerk
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60140 Please Input The Password:
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60140 admin
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60140 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60140 Create Item
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60140 Please Input Item Info:'ISBN'
+
+@2017-10-10 01:31:55 INFO  LibServer:102 - Input from 127.0.0.1:60140 9781442668584
+@2017-10-10 01:31:55 INFO  String:49 - Operation:Create New Item;Item Info:[9781442668584,2];State:Success
+@2017-10-10 01:31:55 INFO  LibServer:111 - Output to 127.0.0.1:60140 ISBN#: 9781442668584 Book title: Harry Potter
+
 @
