@@ -99,12 +99,18 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	            }else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
+	        	}else if(input.equalsIgnoreCase("monitor system")){
+	        		o=outputHandler.monitorSystem();
+	        		output = o.getOutput();
+	                state = CLERK;
+	                oo.setOutput(output);
+		            oo.setState(state);  	
 	        	}else{
-	            	output = "Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.";
+	            	output = "Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -154,7 +160,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -172,7 +178,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -190,7 +196,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -208,7 +214,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -226,7 +232,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -244,7 +250,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
