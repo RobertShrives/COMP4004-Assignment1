@@ -29,6 +29,8 @@ public class OutputHandler {
     public static final int PAYFINE=13;
     public static final int CLERKLOGIN=14;
     public static final int USERLOGIN=15;
+    public static final int COLLECTFINE=16;
+    public static final int RETURNLOANCOPY=17;
 
 	public Output createUser(String input) {
 		Output output=new Output("",0);
@@ -286,6 +288,38 @@ public class OutputHandler {
 		return output;
 	}
 	
+	public Output returnLoanCopy(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean email=strArray[0].contains("@");
+        int userid=UserTable.getInstance().lookup(strArray[0]);
+        Object result="";
+        if(strArray.length!=3 || email!=true){
+        	output.setOutput("Your input should in this format:'useremail,ISBN,copynumber'");
+        	output.setState(RETURNLOANCOPY);
+        }else if(userid==-1){
+        	output.setOutput("The User Does Not Exist!");
+        	output.setState(RETURNLOANCOPY);
+        }else{
+        	boolean ISBN=isInteger(strArray[1]);
+        	boolean copynumber=isNumber(strArray[2]);
+        	if(ISBN!=true || copynumber!=true){
+        		output.setOutput("Your input should in this format:'useremail,ISBN,copynumber'");
+            	output.setState(RETURNLOANCOPY);
+        	}else{
+        		result=LoanTable.getInstance().returnItem(userid, strArray[1], strArray[2], new Date());
+        		if(result.equals("success")){
+            		output.setOutput("Success!");
+            	}else{
+            		output.setOutput(result+"!");
+            	}
+        	}
+        	output.setState(CLERK);
+        }
+		return output;
+	}
+	
 	public Output payFine(String input) {
 		Output output=new Output("",0);
 		String[] strArray = null;   
@@ -312,10 +346,36 @@ public class OutputHandler {
 		return output;
 	}
 	
+	public Output collectFine(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean email=strArray[0].contains("@");
+        int userid=UserTable.getInstance().lookup(strArray[0]);
+        Object result="";
+        if(strArray.length!=1 || email!=true){
+        	output.setOutput("Your input should in this format:'useremail'");
+        	output.setState(COLLECTFINE);
+        }else if(userid==-1){
+        	output.setOutput("The User Does Not Exist!");
+        	output.setState(COLLECTFINE);
+        }else{
+        	result=FeeTable.getInstance().payfine(userid);	
+        	if(result.equals("success")){
+        		output.setOutput("Success!");
+        		}else{
+            		output.setOutput(result+"!");
+            	}
+        		output.setState(CLERK);
+        	}
+        	
+		return output;
+	}
+	
 	public Output clerkLogin(String input) {
 		Output output=new Output("",0);
 		if(input.equalsIgnoreCase(Config.CLERK_PASSWORD)){
-			output.setOutput("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.");
+			output.setOutput("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.");
         	output.setState(CLERK);
 		}else{
 			output.setOutput("Wrong Password!Please Input The Password:");

@@ -56,17 +56,33 @@ public class TestLoanTable {
 	
 	@Test
 	public void testCreateLoanTableMaxPass() {
-		TitleTable.getInstance().createtitle("9781446","test");
-		ItemTable.getInstance().createitem("9781446");
-		TitleTable.getInstance().createtitle("9781447","test1");
-		ItemTable.getInstance().createitem("9781447");
-		TitleTable.getInstance().createtitle("9781448","test2");
-		ItemTable.getInstance().createitem("9781448");
-		TitleTable.getInstance().createtitle("9781449","test3");
-		ItemTable.getInstance().createitem("9781449");
-		LoanTable.getInstance().createloan(4, "9781446", "1", date);
-		LoanTable.getInstance().createloan(4, "9781447", "1", date);	
-		assertEquals("The Maximun Number of Items is Reached", LoanTable.getInstance().createloan(4, "9781448", "1", date));
+		TitleTable.getInstance().createtitle("1781446","test5");
+		ItemTable.getInstance().createitem("1781446");
+		TitleTable.getInstance().createtitle("2781447","test6");
+		ItemTable.getInstance().createitem("2781447");
+		TitleTable.getInstance().createtitle("3781448","test7");
+		ItemTable.getInstance().createitem("3781448");
+		TitleTable.getInstance().createtitle("4781449","test8");
+		ItemTable.getInstance().createitem("4781449");
+		TitleTable.getInstance().createtitle("5781440","test5");
+		ItemTable.getInstance().createitem("5781440");
+		TitleTable.getInstance().createtitle("6781445","test6");
+		ItemTable.getInstance().createitem("6781445");
+		TitleTable.getInstance().createtitle("7781444","test7");
+		ItemTable.getInstance().createitem("7781444");
+		TitleTable.getInstance().createtitle("8781443","test8");
+		ItemTable.getInstance().createitem("8781443");
+		TitleTable.getInstance().createtitle("0781443","test8");
+		ItemTable.getInstance().createitem("0781443");
+		LoanTable.getInstance().createloan(4, "1781446", "1", date);
+		LoanTable.getInstance().createloan(4, "2781447", "1", date);
+		LoanTable.getInstance().createloan(4, "3781448", "1", date);
+		LoanTable.getInstance().createloan(4, "4781449", "1", date);	
+		LoanTable.getInstance().createloan(4, "5781440", "1", date);
+		LoanTable.getInstance().createloan(4, "6781445", "1", date);
+		LoanTable.getInstance().createloan(4, "7781444", "1", date);
+		LoanTable.getInstance().createloan(4, "8781443", "1", date);	
+		assertEquals("The Maximun Number of Items is Reached", LoanTable.getInstance().createloan(4, "0781443", "1", date));
 	}
 	
 	
@@ -80,8 +96,22 @@ public class TestLoanTable {
 		ItemTable.getInstance().createitem("9781448");
 		TitleTable.getInstance().createtitle("9781449","test8");
 		ItemTable.getInstance().createitem("9781449");
+		TitleTable.getInstance().createtitle("9781440","test5");
+		ItemTable.getInstance().createitem("9781440");
+		TitleTable.getInstance().createtitle("9781445","test6");
+		ItemTable.getInstance().createitem("9781445");
+		TitleTable.getInstance().createtitle("9781444","test7");
+		ItemTable.getInstance().createitem("9781444");
+		TitleTable.getInstance().createtitle("9781443","test8");
+		ItemTable.getInstance().createitem("9781443");
 		LoanTable.getInstance().createloan(4, "9781446", "1", date);
-		LoanTable.getInstance().createloan(4, "9781447", "1", date);	
+		LoanTable.getInstance().createloan(4, "9781447", "1", date);
+		LoanTable.getInstance().createloan(4, "9781448", "1", date);
+		LoanTable.getInstance().createloan(4, "9781449", "1", date);	
+		LoanTable.getInstance().createloan(4, "9781440", "1", date);
+		LoanTable.getInstance().createloan(4, "9781445", "1", date);
+		LoanTable.getInstance().createloan(4, "9781444", "1", date);
+		LoanTable.getInstance().createloan(4, "9781443", "1", date);	
 		assertNotEquals("success", LoanTable.getInstance().createloan(4, "9781448", "1", date));
 	}
 	
@@ -150,6 +180,35 @@ public class TestLoanTable {
 		TitleTable.getInstance().createtitle("9781442111666","test");
 		ItemTable.getInstance().createitem("9781442111666");
 		LoanTable.getInstance().createloan(1, "9781442111666", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111667","test");
+		ItemTable.getInstance().createitem("9781442111667");
+		LoanTable.getInstance().createloan(1, "9781442111667", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111668","test");
+		ItemTable.getInstance().createitem("9781442111668");
+		LoanTable.getInstance().createloan(1, "9781442111668", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111669","test");
+		ItemTable.getInstance().createitem("9781442111669");
+		LoanTable.getInstance().createloan(1, "9781442111669", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111660","test");
+		ItemTable.getInstance().createitem("9781442111660");
+		LoanTable.getInstance().createloan(1, "9781442111660", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111662","test");
+		ItemTable.getInstance().createitem("9781442111662");
+		LoanTable.getInstance().createloan(1, "9781442111662", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111661","test");
+		ItemTable.getInstance().createitem("9781442111661");
+		LoanTable.getInstance().createloan(1, "9781442111661", "1", date);
+		
+		TitleTable.getInstance().createtitle("9781442111663","test");
+		ItemTable.getInstance().createitem("9781442111663");
+		LoanTable.getInstance().createloan(1, "9781442111663", "1", date);
+		
 		assertEquals(false, LoanTable.getInstance(). checkLimit(1));	
 	}
 	

@@ -90,6 +90,7 @@ public class TitleTable {
 		if(flag!=0){
 			boolean loan=LoanTable.getInstance().checkLoan(string);
 			if(loan){
+				TitleTable.getInstance().searchISBN(string);
 				String string2=titleList.get(index).getBooktitle();
 				ItemTable.getInstance().deleteAll(string);
 				titleList.remove(index);

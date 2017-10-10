@@ -10,8 +10,8 @@ import client.LibClient;
 import server.network.LibServer;
 import utilities.Config;
 
-public class TestAddTitle {
-	
+public class TestRemoveTitle {
+
 	private static LibServer server = new LibServer(Config.DEFAULT_PORT);
 	
 	@BeforeClass
@@ -24,48 +24,45 @@ public class TestAddTitle {
 	}
 	
 	@Test
-	public void testAddTitleSuccess() {
+	public void testRemoveTitleDoesntExist() {
 		LibClient client2 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
 		server.handle(client2.getID(), "Hello");
 		server.handle(client2.getID(), "Clerk");
 		server.handle(client2.getID(), "admin");
-		server.handle(client2.getID(), "Create title");
-		server.handle(client2.getID(), "'123456789985,gud book'");
+		server.handle(client2.getID(), "Delete title");
+		server.handle(client2.getID(), "1123456789985");
 	}
 	
 	@Test
-	public void testAddTitleExists() {
+	public void testRemoveTitleSuccess() {
 		LibClient client2 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
 		server.handle(client2.getID(), "Hello");
 		server.handle(client2.getID(), "Clerk");
 		server.handle(client2.getID(), "admin");
-		server.handle(client2.getID(), "Create title");
-		server.handle(client2.getID(), "9781442668584,Harry Potter");
+		server.handle(client2.getID(), "Delete title");
+		server.handle(client2.getID(), "9781317594277");
 	}
 	
 	@Test
-	public void testAddTitleWrongFormatSuccess() {
-		LibClient client1 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
-		server.handle(client1.getID(), "Hello");
-		server.handle(client1.getID(), "Clerk");
-		server.handle(client1.getID(), "admin");
-		server.handle(client1.getID(), "Create title");
-		server.handle(client1.getID(), "777788899,wrong");
-		server.handle(client1.getID(), "Create title");
-		server.handle(client1.getID(), "'123333789985,gudder book'");
-	}
-	
-	@Test
-	public void testAddTitleWrongFormatExists() {
+	public void testRemoveTitleActiveLoan() {
 		LibClient client2 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
 		server.handle(client2.getID(), "Hello");
 		server.handle(client2.getID(), "Clerk");
 		server.handle(client2.getID(), "admin");
-		server.handle(client2.getID(), "Create title");
-		server.handle(client2.getID(), "777788899,wrong");
-		server.handle(client2.getID(), "Create title");
-		server.handle(client2.getID(), "9781442668584,Harry Potter");
+		server.handle(client2.getID(), "Delete title");
+		server.handle(client2.getID(), "9781442668584");
 	}
-
+	
+	@Test
+	public void testRemoveTitlebadInput() {
+		LibClient client2 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
+		server.handle(client2.getID(), "Hello");
+		server.handle(client2.getID(), "Clerk");
+		server.handle(client2.getID(), "admin");
+		server.handle(client2.getID(), "Delete title");
+		server.handle(client2.getID(), "test");
+	}
+	
+	
 
 }

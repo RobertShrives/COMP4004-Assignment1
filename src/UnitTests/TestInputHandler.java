@@ -34,7 +34,7 @@ public class TestInputHandler {
 	
 	@Test
 	public void testProcessInputClerkLogin() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("admin", 14).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("admin", 14).getOutput());
 	}
 	
 	@Test
@@ -75,12 +75,12 @@ public class TestInputHandler {
 	
 	@Test
 	public void testProcessInputClerkLoginMainMenu() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("main menu", 2).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("main menu", 2).getOutput());
 	}
 	
 	@Test
 	public void testProcessInputClerkLoginOther() {
-		assertEquals("Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System",iHandler.processInput("ha", 2).getOutput());
+		assertEquals("Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("ha", 2).getOutput());
 	}
 	
 	@Test
@@ -120,12 +120,12 @@ public class TestInputHandler {
 	
 	@Test
 	public void testProcessInputCreateUserMainMenu() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("main menu", 4).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("main menu", 4).getOutput());
 	}
 	
 	@Test
 	public void testProcessInputCreateTitle() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("main menu", 5).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("main menu", 5).getOutput());
 	}
 	
 	@Test
@@ -135,7 +135,7 @@ public class TestInputHandler {
 	
 	@Test
 	public void testProcessInputCreateItem() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("main menu", 6).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("main menu", 6).getOutput());
 	}
 	
 	@Test
@@ -150,7 +150,7 @@ public class TestInputHandler {
 	
 	@Test
 	public void testProcessInputDeleteUserMainMenu() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("main menu", 7).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("main menu", 7).getOutput());
 	}
 	
 	@Test
@@ -160,7 +160,7 @@ public class TestInputHandler {
 	
 	@Test
 	public void testProcessInputDeleteTitleMainMenu() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.",iHandler.processInput("main menu", 8).getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.",iHandler.processInput("main menu", 8).getOutput());
 	}
 	
 	@Test

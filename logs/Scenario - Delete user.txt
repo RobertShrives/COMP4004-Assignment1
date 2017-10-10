@@ -1,0 +1,96 @@
+2017-10-10 12:50:23 INFO  LibServer:34 - Binding to port 5050
+@2017-10-10 12:50:23 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 12:50:23 INFO  LibServer:48 - Server started: ServerSocket[addr=0.0.0.0/0.0.0.0,localport=5050] 11
+@2017-10-10 12:50:23 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Rob@carleton.ca,Rob], [1,Jenny@carleton.ca,Jenny], [2,Alice@carleton.ca,Alice], [3,John@carleton.ca,John], [4,Gail@carleton.ca,Gail]]
+@2017-10-10 12:50:23 INFO  String:28 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,Harry Potter], [9781442616899,Percy Jackson], [9781442667181,Silence of the Lambs], [9781611687910,Lord of the Rings], [9781317594277,Atlas Shrugged]]
+@2017-10-10 12:50:23 INFO  String:27 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 12:50:23 INFO  String:27 - Operation:Initialize LoanTable;LoanTable: [[4,9781442668584,1,2017-10-10 12:50:23,0]]
+@2017-10-10 12:50:23 INFO  String:81 - Operation:Apply OutStanding Fee;Fee Info:[4,0];State:Success
+@2017-10-10 12:50:23 INFO  String:91 - Operation:Initialize FeeTable;FeeTable: [[0,5], [4,0]]
+@2017-10-10 12:50:23 INFO  LibClient:32 - 62795 : Connected to server: /127.0.0.1
+@2017-10-10 12:50:23 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:62795] Client Socket: [62795 ]
+
+@2017-10-10 12:50:23 INFO  LibClient:33 - 62795 : Connected to portid: 62795
+@2017-10-10 12:50:23 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62795 Hello
+@2017-10-10 12:50:23 INFO  LibServer:119 - Output to 127.0.0.1:62795 Who Are you?Clerk or User?
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62795 Clerk
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62795 Please Input The Password:
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62795 admin
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62795 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62795 Delete User
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62795 Please Input User Info:'useremail'
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62795 Rob@carleton.ca
+@2017-10-10 12:50:23 INFO  String:107 - Operation:Delete User;User Info:[Rob@carleton.ca,Rob];State:Fail;Reason:Outstanding Fee Exists.
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62795 Outstanding Fee Exists!
+
+
+@2017-10-10 12:50:23 INFO  LibClient:32 - 62796 : Connected to server: /127.0.0.1
+@2017-10-10 12:50:23 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:62796] Client Socket: [62796 ]
+
+@2017-10-10 12:50:23 INFO  LibClient:33 - 62796 : Connected to portid: 62796
+@2017-10-10 12:50:23 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62796 Hello
+@2017-10-10 12:50:23 INFO  LibServer:119 - Output to 127.0.0.1:62796 Who Are you?Clerk or User?
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62796 Clerk
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62796 Please Input The Password:
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62796 admin
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62796 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62796 Delete User
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62796 Please Input User Info:'useremail'
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62796 Alice@carleton.ca
+@2017-10-10 12:50:23 INFO  String:104 - Operation:Delete User;User Info:[Alice@carleton.ca,Alice];State:Success
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62796 Success!
+
+
+@2017-10-10 12:50:23 INFO  LibClient:32 - 62797 : Connected to server: /127.0.0.1
+@2017-10-10 12:50:23 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:62797] Client Socket: [62797 ]
+
+@2017-10-10 12:50:23 INFO  LibClient:33 - 62797 : Connected to portid: 62797
+@2017-10-10 12:50:23 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62797 Hello
+@2017-10-10 12:50:23 INFO  LibServer:119 - Output to 127.0.0.1:62797 Who Are you?Clerk or User?
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62797 Clerk
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62797 Please Input The Password:
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62797 admin
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62797 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62797 Delete User
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62797 Please Input User Info:'useremail'
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62797 Gail@carleton.ca
+@2017-10-10 12:50:23 INFO  String:110 - Operation:Delete User;User Info:[Gail@carleton.ca,Gail];State:Fail;Reason:Active Loan Exists.
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62797 Active Loan Exists!
+
+
+@2017-10-10 12:50:23 INFO  LibClient:32 - 62798 : Connected to server: /127.0.0.1
+@2017-10-10 12:50:23 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:62798] Client Socket: [62798 ]
+
+@2017-10-10 12:50:23 INFO  LibClient:33 - 62798 : Connected to portid: 62798
+@2017-10-10 12:50:23 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62798 Hello
+@2017-10-10 12:50:23 INFO  LibServer:119 - Output to 127.0.0.1:62798 Who Are you?Clerk or User?
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62798 Clerk
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62798 Please Input The Password:
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62798 admin
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62798 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62798 Delete User
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62798 Please Input User Info:'useremail'
+
+@2017-10-10 12:50:23 INFO  LibServer:102 - Input from 127.0.0.1:62798 r@carleton.ca
+@2017-10-10 12:50:23 INFO  LibServer:111 - Output to 127.0.0.1:62798 The User Does Not Exist!
+
+@

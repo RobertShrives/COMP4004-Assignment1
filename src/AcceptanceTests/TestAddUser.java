@@ -19,22 +19,22 @@ public class TestAddUser {
 	
 	@Test
 	public void testAddUserDoesntExist() {
-		LibClient client1 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
-		server.handle(client1.getID(), "Hello");
-		server.handle(client1.getID(), "Clerk");
-		server.handle(client1.getID(), "admin");
-		server.handle(client1.getID(), "Create User");
-		server.handle(client1.getID(), "r@gmail,pass");
+		LibClient client3 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
+		server.handle(client3.getID(), "Hello");
+		server.handle(client3.getID(), "Clerk");
+		server.handle(client3.getID(), "admin");
+		server.handle(client3.getID(), "Create User");
+		server.handle(client3.getID(), "r@gmail,pass");
 	}
 	
 	@Test
 	public void  testAddUserDoesExist() {
-		LibClient client1 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
-		server.handle(client1.getID(), "Hello");
-		server.handle(client1.getID(), "Clerk");
-		server.handle(client1.getID(), "admin");
-		server.handle(client1.getID(), "Create User");
-		server.handle(client1.getID(), "Rob@carleton.ca,Rob");
+		LibClient client3 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
+		server.handle(client3.getID(), "Hello");
+		server.handle(client3.getID(), "Clerk");
+		server.handle(client3.getID(), "admin");
+		server.handle(client3.getID(), "Create User");
+		server.handle(client3.getID(), "Rob@carleton.ca,Rob");
 	}
 
 }

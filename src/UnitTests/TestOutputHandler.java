@@ -207,13 +207,23 @@ public class TestOutputHandler {
 	}
 	
 	@Test
+	public void testCollectFineSuccess() {
+		assertEquals("Success!", outHandler.collectFine("rob@carleton.ca").getOutput());
+	}
+	
+	@Test
+	public void testCollectFineDoesntExist() {
+		assertEquals("The User Does Not Exist!", outHandler.payFine("1@carleton.ca").getOutput());
+	}
+	
+	@Test
 	public void testPayFineWrongFormat() {
 		assertEquals("Your input should in this format:'useremail'", outHandler.payFine("11a").getOutput());
 	}
 	
 	@Test
 	public void testClerkLoginSuccess() {
-		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.", outHandler.clerkLogin("admin").getOutput());
+		assertEquals("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.", outHandler.clerkLogin("admin").getOutput());
 	}
 	
 	@Test
