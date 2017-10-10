@@ -1,0 +1,52 @@
+2017-10-10 00:20:13 INFO  LibServer:34 - Binding to port 5050
+@2017-10-10 00:20:13 INFO  LibServer:48 - Server started: ServerSocket[addr=0.0.0.0/0.0.0.0,localport=5050] 11
+@2017-10-10 00:20:13 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 00:20:13 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Rob@carleton.ca,Rob], [1,Jenny@carleton.ca,Jenny], [2,Alice@carleton.ca,Alice], [3,John@carleton.ca,John], [4,Gail@carleton.ca,Gail]]
+@2017-10-10 00:20:13 INFO  String:28 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,Harry Potter], [9781442616899,Percy Jackson], [9781442667181,Silence of the Lambs], [9781611687910,Lord of the Rings], [9781317594277,Atlas Shrugged]]
+@2017-10-10 00:20:13 INFO  String:27 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 00:20:13 INFO  String:27 - Operation:Initialize LoanTable;LoanTable: [[4,9781442668584,1,2017-10-10 12:20:13,0]]
+@2017-10-10 00:20:13 INFO  String:81 - Operation:Apply OutStanding Fee;Fee Info:[4,0];State:Success
+@2017-10-10 00:20:13 INFO  String:91 - Operation:Initialize FeeTable;FeeTable: [[0,5], [4,0]]
+@2017-10-10 00:20:14 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:59681] Client Socket: [59681 ]
+
+@2017-10-10 00:20:14 INFO  LibClient:32 - 59681 : Connected to server: /127.0.0.1
+@2017-10-10 00:20:14 INFO  LibClient:33 - 59681 : Connected to portid: 59681
+@2017-10-10 00:20:14 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59681 Hello
+@2017-10-10 00:20:14 INFO  LibServer:119 - Output to 127.0.0.1:59681 Who Are you?Clerk or User?
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59681 Clerk
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59681 Please Input The Password:
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59681 admin
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59681 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59681 Create User
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59681 Please Input User Info:'username,password'
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59681 r@gmail,pass
+@2017-10-10 00:20:14 INFO  String:45 - Operation:Create New User;User Info:[r@gmail,pass];State:Success
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59681 Success!
+
+
+@2017-10-10 00:20:14 INFO  LibClient:32 - 59682 : Connected to server: /127.0.0.1
+@2017-10-10 00:20:14 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:59682] Client Socket: [59682 ]
+
+@2017-10-10 00:20:14 INFO  LibClient:33 - 59682 : Connected to portid: 59682
+@2017-10-10 00:20:14 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59682 Hello
+@2017-10-10 00:20:14 INFO  LibServer:119 - Output to 127.0.0.1:59682 Who Are you?Clerk or User?
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59682 Clerk
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59682 Please Input The Password:
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59682 admin
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59682 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System.
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59682 Create User
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59682 Please Input User Info:'username,password'
+
+@2017-10-10 00:20:14 INFO  LibServer:102 - Input from 127.0.0.1:59682 Rob@carleton.ca,Rob
+@2017-10-10 00:20:14 INFO  String:48 - Operation:Create New User;User Info:[Rob@carleton.ca,Rob];State:Fail;Reason:The User already existed.
+@2017-10-10 00:20:14 INFO  LibServer:111 - Output to 127.0.0.1:59682 The User Already Exists!
+
