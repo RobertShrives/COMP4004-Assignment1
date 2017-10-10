@@ -89,6 +89,11 @@ public class TestUserTable {
 		assertNotEquals(1 , UserTable.getInstance().checkUser("Rob@carleton.ca", "Rob"));
 	}
 	
+	@Test
+	public void testDisplayBookTitles() {
+		assertEquals(UserTable.getInstance().getUserTable().size(), UserTable.getInstance().displayUserNames().size());
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}

@@ -148,4 +148,12 @@ public class UserTable {
 		return result;
 	}
 	
+	public List<String> displayUserNames(){
+		List<String> result=new ArrayList<String>();
+		for(int i=0;i<userList.size();i++){
+			result.add( userList.get(i).getUsername());
+		}
+		return result;
+	}
+	
 }

@@ -98,6 +98,11 @@ public class TestTitleTable {
 		assertNotEquals("Harry Pothead", TitleTable.getInstance().searchISBN("9781442668584"));
 	}
 	
+	@Test
+	public void testDisplayBookTitles() {
+		assertEquals(TitleTable.getInstance().getTitleTable().size(), TitleTable.getInstance().displayBookTitles().size());
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}

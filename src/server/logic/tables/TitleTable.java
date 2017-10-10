@@ -117,4 +117,13 @@ public class TitleTable {
 		return result;
 	}
 	
+	public List<String> displayBookTitles(){
+		List<String> result=new ArrayList<String>();
+
+		for(int i=0;i<titleList.size();i++){
+			result.add( titleList.get(i).getBooktitle());
+		}
+		return result;
+	}
+	
 }
