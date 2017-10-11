@@ -22,6 +22,8 @@ public class InputHandler {
     public static final int USERLOGIN=15;
     public static final int COLLECTFINE=16;
     public static final int RETURNLOANCOPY=17;
+    public static final int BORROWLOANCOPY=18;
+    public static final int RENEWLOAN =19;
     
     OutputHandler outputHandler=new OutputHandler();
 
@@ -119,6 +121,16 @@ public class InputHandler {
 	            }else if (input.equalsIgnoreCase("return loancopy")) {
 		            output = "Please Input Item Info:'useremail,ISBN,copynumber'";
 		            state=RETURNLOANCOPY;
+		            oo.setOutput(output);
+		            oo.setState(state);
+	            }else if (input.equalsIgnoreCase("BORROW LOANCOPY")) {
+	            	output = "Please Input User Info:'useremail,ISBN,copynumber'";
+	            	state=BORROWLOANCOPY;
+	            	oo.setOutput(output);
+		            oo.setState(state);
+	            }else if (input.equalsIgnoreCase("RENEW loan")) {
+		            output = "Please Input Item Info:'useremail,ISBN,copynumber'";
+		            state=RENEWLOAN;
 		            oo.setOutput(output);
 		            oo.setState(state);
 	            }else{
@@ -310,7 +322,44 @@ public class InputHandler {
 	        		oo.setOutput(output);
 		            oo.setState(state);
 	        	}
+	        }else if(state==BORROWLOANCOPY){
+	        	if(input.equalsIgnoreCase("log out")){
+	            	output = "Successfully Log Out!";
+	                state = WAITING;
+	                oo.setOutput(output);
+		            oo.setState(state);
+	        	}else if(input.equalsIgnoreCase("main menu")){
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.";
+	                state = CLERK;
+	                oo.setOutput(output);
+		            oo.setState(state);
+	        	}else{
+	        		o=outputHandler.borrowLoanCopy(input);
+	        		output=o.getOutput();
+	        		state=o.getState();
+	        		oo.setOutput(output);
+		            oo.setState(state);
+	        	}
+	        }else if(state==RENEWLOAN){
+	        	if(input.equalsIgnoreCase("log out")){
+	            	output = "Successfully Log Out!";
+	                state = WAITING;
+	                oo.setOutput(output);
+		            oo.setState(state);
+	        	}else if(input.equalsIgnoreCase("main menu")){
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.";
+	                state = CLERK;
+	                oo.setOutput(output);
+		            oo.setState(state);
+	        	}else{
+	        		o=outputHandler.renewLoan(input);
+	        		output=o.getOutput();
+	        		state=o.getState();
+	        		oo.setOutput(output);
+		            oo.setState(state);
+	        	}
 	        }
+	        
 	        else if(state==BORROW){
 	        	if(input.equalsIgnoreCase("log out")){
 	            	output = "Successfully Log Out!";

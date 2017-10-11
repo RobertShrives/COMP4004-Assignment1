@@ -31,6 +31,8 @@ public class OutputHandler {
     public static final int USERLOGIN=15;
     public static final int COLLECTFINE=16;
     public static final int RETURNLOANCOPY=17;
+    public static final int BORROWLOANCOPY=18;
+    public static final int RENEWLOAN =19;
 
 	public Output createUser(String input) {
 		Output output=new Output("",0);
@@ -224,6 +226,38 @@ public class OutputHandler {
 		return output;
 	}
 	
+	public Output borrowLoanCopy(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean email=strArray[0].contains("@");
+        int userid=UserTable.getInstance().lookup(strArray[0]);
+        Object result="";
+        if(strArray.length!=3 || email!=true){
+        	output.setOutput("Your input should in this format:'useremail,ISBN,copynumber'");
+        	output.setState(BORROWLOANCOPY);
+        }else if(userid==-1){
+        	output.setOutput("The User Does Not Exist!");
+        	output.setState(BORROWLOANCOPY);
+        }else{
+        	boolean ISBN=isInteger(strArray[1]);
+        	boolean copynumber=isNumber(strArray[2]);
+        	if(ISBN!=true || copynumber!=true){
+        		output.setOutput("Your input should in this format:'useremail,ISBN,copynumber'");
+            	output.setState(BORROWLOANCOPY);
+        	}else{
+        		result=LoanTable.getInstance().createloan(userid, strArray[1], strArray[2], new Date());
+        		if(result.equals("success")){
+            		output.setOutput("Success!");
+            	}else{
+            		output.setOutput(result+"!");
+            	}
+        	}
+        	output.setState(CLERK);
+        }
+		return output;
+	}
+	
 	public Output renew(String input) {
 		Output output=new Output("",0);
 		String[] strArray = null;   
@@ -252,6 +286,38 @@ public class OutputHandler {
             	}
         	}
         	output.setState(USER);
+        }
+		return output;
+	}
+	
+	public Output renewLoan(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean email=strArray[0].contains("@");
+        int userid=UserTable.getInstance().lookup(strArray[0]);
+        Object result="";
+        if(strArray.length!=3 || email!=true){
+        	output.setOutput("Your input should in this format:'useremail,ISBN,copynumber'");
+        	output.setState(RENEWLOAN);
+        }else if(userid==-1){
+        	output.setOutput("The User Does Not Exist!");
+        	output.setState(RENEWLOAN);
+        }else{
+        	boolean ISBN=isInteger(strArray[1]);
+        	boolean copynumber=isNumber(strArray[2]);
+        	if(ISBN!=true || copynumber!=true){
+        		output.setOutput("Your input should in this format:'useremail,ISBN,copynumber'");
+            	output.setState(RENEWLOAN);
+        	}else{
+        		result=LoanTable.getInstance().renewal(userid, strArray[1], strArray[2], new Date());
+        		if(result.equals("success")){
+            		output.setOutput("Success!");
+            	}else{
+            		output.setOutput(result+"!");
+            	}
+        	}
+        	output.setState(CLERK);
         }
 		return output;
 	}

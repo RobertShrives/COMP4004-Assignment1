@@ -1,6 +1,11 @@
 package UnitTests;
 
 import static org.junit.Assert.*;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import server.logic.handler.model.Output;
 import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
@@ -11,10 +16,15 @@ import utilities.Config;
 import org.junit.AfterClass;
 import org.junit.Test;
 
+import com.sun.jmx.snmp.Timestamp;
+
 import server.logic.handler.OutputHandler;
 
 public class TestOutputHandler {
-
+	Calendar myCalendar = new GregorianCalendar(2014, 2, 11);
+	Date myDate = myCalendar.getTime();
+	Timestamp stamp = new Timestamp(System.currentTimeMillis());
+	Date date = new Date(stamp.getDateTime());
 	OutputHandler outHandler = new OutputHandler();
 	OutputHandler outHandler2;
 	
@@ -149,6 +159,14 @@ public class TestOutputHandler {
 	}
 	
 	@Test
+	public void testBorrowLoanCopy() {
+		TitleTable.getInstance().createtitle("9894531236987", "delet bopok lawl");
+		ItemTable.getInstance().createitem("9894531236987");
+		UserTable.getInstance().createuser("Joeshmoe@mail.com", "knucklebreaker");
+		assertEquals("Success!", outHandler.borrowLoanCopy("Joeshmoe@mail.com,9894531236987,1").getOutput());
+	}
+	
+	@Test
 	public void testBorrowItemDoesntExist() {
 		assertEquals("The User Does Not Exist!", outHandler.borrow("22@mail.com,9894561236987,1").getOutput());
 	}
@@ -184,6 +202,16 @@ public class TestOutputHandler {
 		LoanTable.getInstance().getLoanTable();
 		outHandler.borrow("Joeshmoe@mail.com,9894561236988,1").getOutput();
 		assertEquals("Success!", outHandler.returnBook("Joeshmoe@mail.com,9894561236988,1").getOutput());
+	}
+	
+	@Test
+	public void testReturnLoancopy() {
+		TitleTable.getInstance().createtitle("9894561236988", "delet bopok lawl");
+		ItemTable.getInstance().createitem("9894561236988");
+		UserTable.getInstance().createuser("Joeshmoe@mail.com", "knucklebreaker");
+		LoanTable.getInstance().getLoanTable();
+		outHandler.borrow("Joeshmoe@mail.com,9894561236988,1").getOutput();
+		assertEquals("Success!", outHandler.returnLoanCopy("Joeshmoe@mail.com,9894561236988,1").getOutput());
 	}
 	
 	@Test

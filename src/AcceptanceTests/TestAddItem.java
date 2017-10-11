@@ -30,16 +30,16 @@ server.handle(client1.getID(), "9781442668584");
 }
 @Test
 public void testAddItemTitleDoesNotExist() {
-LibClient client1 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
-server.handle(client1.getID(), "Hello");
-server.handle(client1.getID(), "Clerk");
-server.handle(client1.getID(), "admin");
-server.handle(client1.getID(), "Create Item");
-server.handle(client1.getID(), "3731442668584");
-server.handle(client1.getID(), "Create Title");
-server.handle(client1.getID(), "3731442668584,book");
-server.handle(client1.getID(), "Create Item");
-server.handle(client1.getID(), "3731442668584");
-//server.remove(client1.getID());
+LibClient client2 = new LibClient(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
+server.handle(client2.getID(), "Hello");
+server.handle(client2.getID(), "Clerk");
+server.handle(client2.getID(), "admin");
+server.handle(client2.getID(), "Create Item");
+server.handle(client2.getID(), "3731442668584");
+server.handle(client2.getID(), "Create Title");
+server.handle(client2.getID(), "3731442668584,book");
+server.handle(client2.getID(), "Create Item");
+server.handle(client2.getID(), "3731442668584");
+
 }
 }
