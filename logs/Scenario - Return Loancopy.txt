@@ -1,0 +1,45 @@
+
+@2017-10-10 21:04:14 INFO  LibClient:32 - 59112 : Connected to server: /127.0.0.1
+@2017-10-10 21:04:14 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:59112] Client Socket: [59112 ]
+
+@2017-10-10 21:04:14 INFO  LibClient:33 - 59112 : Connected to portid: 59112
+@2017-10-10 21:04:14 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59112 Hello
+@2017-10-10 21:04:14 INFO  LibServer:119 - Output to 127.0.0.1:59112 Who Are you?Clerk or User?
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59112 Clerk
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59112 Please Input The Password:
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59112 admin
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59112 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59112 return loancopy
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59112 Please Input Item Info:'useremail,ISBN,copynumber'
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59112 Gail@carleton.ca,9781442668584,1
+@2017-10-10 21:04:14 INFO  String:251 - Operation:Return Item;Loan Info:[4,9781442668584,1,2017-10-10 09:04:14];State:Success
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59112 Success!
+
+
+@2017-10-10 21:04:14 INFO  LibClient:32 - 59113 : Connected to server: /127.0.0.1
+@2017-10-10 21:04:14 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:59113] Client Socket: [59113 ]
+
+@2017-10-10 21:04:14 INFO  LibClient:33 - 59113 : Connected to portid: 59113
+@2017-10-10 21:04:14 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59113 Hello
+@2017-10-10 21:04:14 INFO  LibServer:119 - Output to 127.0.0.1:59113 Who Are you?Clerk or User?
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59113 Clerk
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59113 Please Input The Password:
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59113 admin
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59113 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59113 return loancopy
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59113 Please Input Item Info:'useremail,ISBN,copynumber'
+
+@2017-10-10 21:04:14 INFO  LibServer:102 - Input from 127.0.0.1:59113 rob@carleton.ca,1234567891230,1
+@2017-10-10 21:04:14 INFO  String:258 - Operation:Return Item;Loan Info:[0,1234567891230,1,2017-10-10 09:04:14];State:Fail;Reason:The Loan Does Not Exist.
+@2017-10-10 21:04:14 INFO  LibServer:111 - Output to 127.0.0.1:59113 The Loan Does Not Exist!
+
+@

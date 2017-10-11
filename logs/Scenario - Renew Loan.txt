@@ -1,0 +1,45 @@
+
+@2017-10-10 21:13:14 INFO  LibClient:32 - 59153 : Connected to server: /127.0.0.1
+@2017-10-10 21:13:14 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:59153] Client Socket: [59153 ]
+
+@2017-10-10 21:13:14 INFO  LibClient:33 - 59153 : Connected to portid: 59153
+@2017-10-10 21:13:14 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 21:13:14 INFO  LibServer:102 - Input from 127.0.0.1:59153 Hello
+@2017-10-10 21:13:14 INFO  LibServer:119 - Output to 127.0.0.1:59153 Who Are you?Clerk or User?
+
+@2017-10-10 21:13:14 INFO  LibServer:102 - Input from 127.0.0.1:59153 Clerk
+@2017-10-10 21:13:14 INFO  LibServer:111 - Output to 127.0.0.1:59153 Please Input The Password:
+
+@2017-10-10 21:13:14 INFO  LibServer:102 - Input from 127.0.0.1:59153 admin
+@2017-10-10 21:13:14 INFO  LibServer:111 - Output to 127.0.0.1:59153 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.
+
+@2017-10-10 21:13:14 INFO  LibServer:102 - Input from 127.0.0.1:59153 renew loan
+@2017-10-10 21:13:14 INFO  LibServer:111 - Output to 127.0.0.1:59153 Please Input Item Info:'useremail,ISBN,copynumber'
+
+@2017-10-10 21:13:14 INFO  LibServer:102 - Input from 127.0.0.1:59153 rob@carleton.ca,1234567891230,1
+@2017-10-10 21:13:14 INFO  String:228 - Operation:Renew Item;Loan Info:[0,1234567891230,1,2017-10-10 09:13:14];State:Fail;Reason:Outstanding Fee Exists.
+@2017-10-10 21:13:14 INFO  LibServer:111 - Output to 127.0.0.1:59153 Outstanding Fee Exists!
+
+
+
+@2017-10-10 21:13:15 INFO  LibClient:32 - 59156 : Connected to server: /127.0.0.1
+@2017-10-10 21:13:15 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:59156] Client Socket: [59156 ]
+
+@2017-10-10 21:13:15 INFO  LibClient:33 - 59156 : Connected to portid: 59156
+@2017-10-10 21:13:15 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 21:13:15 INFO  LibServer:102 - Input from 127.0.0.1:59156 Hello
+@2017-10-10 21:13:15 INFO  LibServer:119 - Output to 127.0.0.1:59156 Who Are you?Clerk or User?
+
+@2017-10-10 21:13:15 INFO  LibServer:102 - Input from 127.0.0.1:59156 Clerk
+@2017-10-10 21:13:15 INFO  LibServer:111 - Output to 127.0.0.1:59156 Please Input The Password:
+
+@2017-10-10 21:13:15 INFO  LibServer:102 - Input from 127.0.0.1:59156 admin
+@2017-10-10 21:13:15 INFO  LibServer:111 - Output to 127.0.0.1:59156 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item,Monitor System,Collect Fine,Borrow Loancopy,Renew Loan,Return Loancopy.
+
+@2017-10-10 21:13:15 INFO  LibServer:102 - Input from 127.0.0.1:59156 renew loan
+@2017-10-10 21:13:15 INFO  LibServer:111 - Output to 127.0.0.1:59156 Please Input Item Info:'useremail,ISBN,copynumber'
+
+@2017-10-10 21:13:15 INFO  LibServer:102 - Input from 127.0.0.1:59156 Gail@carleton.ca,9781442668584,1
+@2017-10-10 21:13:15 INFO  String:213 - Operation:Renew Item;Loan Info:[4,9781442668584,1,2017-10-10 09:13:15];State:Success
+@2017-10-10 21:13:15 INFO  LibServer:111 - Output to 127.0.0.1:59156 Success!
+
